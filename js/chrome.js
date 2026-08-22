@@ -126,4 +126,27 @@ window.BA.todaySeed = function () {
   return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
 };
 
+/** Short felt-table toast for illegal moves / soft warnings. */
+window.BA.toast = function (msg) {
+  if (!msg) return;
+  const host =
+    document.querySelector(".play-table") ||
+    document.querySelector(".board-frame") ||
+    document.body;
+  let el = host.querySelector(":scope > .ba-toast");
+  if (!el) {
+    el = document.createElement("div");
+    el.className = "ba-toast";
+    el.setAttribute("role", "status");
+    el.setAttribute("aria-live", "polite");
+    host.appendChild(el);
+  }
+  el.textContent = msg;
+  el.classList.remove("show");
+  void el.offsetWidth;
+  el.classList.add("show");
+  clearTimeout(window.BA._toastT);
+  window.BA._toastT = setTimeout(() => el.classList.remove("show"), 1800);
+};
+
 document.addEventListener("DOMContentLoaded", () => window.BA.mountChrome());

@@ -198,6 +198,76 @@
       return card.s === top(f).s && card.r === top(f).r + 1;
     }
 
+    function toast(msg) {
+      if (window.BA && typeof window.BA.toast === "function") window.BA.toast(msg);
+    }
+
+    function tabFailMsg(dest, card) {
+      if (!dest) {
+        if (variant === "bakersdozen") return "Empty columns stay empty in Baker's Dozen.";
+        return "Only a king can fill an empty column.";
+      }
+      if (variant === "fortythieves") {
+        if (dest.s !== card.s) return "Build down in the same suit.";
+        return "Build down by one rank.";
+      }
+      if (variant === "bakersdozen") return "Build down by one rank (any suit).";
+      if (variant === "spider" || variant === "spiderette" || variant === "scorpion") {
+        return "Build down by one rank.";
+      }
+      if (!colorAlt(dest, card) && dest.r !== card.r + 1) return "Build down, alternating colors.";
+      if (!colorAlt(dest, card)) return "Colors must alternate.";
+      return "Build down by one rank.";
+    }
+
+    function foundFailMsg(f, card) {
+      if (variant === "canfield") {
+        if (!f.length) return "Start this foundation on the base rank.";
+        return "Foundations build up in suit (wrapping king to ace).";
+      }
+      if (!f.length) return "Foundations start with an ace.";
+      if (card.s !== top(f).s) return "Foundations build in the same suit.";
+      return "Build up by one rank on the foundation.";
+    }
+
+    function moveFailMsg(from, to) {
+      let cards;
+      if (from.kind === "tab") {
+        cards = runFrom(from.col, from.idx);
+        if (!cards) {
+          if (variant === "spider" || variant === "spiderette") return "Only same-suit runs can move together.";
+          if (variant === "fortythieves" || variant === "bakersdozen") return "Only one card can move at a time.";
+          return "That stack is not a valid run.";
+        }
+      } else if (from.kind === "waste") cards = state.waste && state.waste.length ? [top(state.waste)] : null;
+      else if (from.kind === "cell") cards = state.cells[from.i] ? [state.cells[from.i]] : null;
+      else if (from.kind === "reserve") cards = state.reserve && state.reserve.length ? [top(state.reserve)] : null;
+      else return "That move is not allowed.";
+      if (!cards || !cards[0]) return "Nothing to move.";
+
+      if (to.kind === "found") {
+        if (cards.length !== 1) return "Only one card can go to the foundation.";
+        return foundFailMsg(state.found[to.i], cards[0]);
+      }
+      if (to.kind === "cell") {
+        if (cards.length !== 1) return "Free cells hold one card only.";
+        if (state.cells[to.i]) return "That free cell is already full.";
+        return "That move is not allowed.";
+      }
+      if (to.kind === "tab") {
+        const dest = top(state.tab[to.col]);
+        if (!canOnTab(dest, cards[0])) return tabFailMsg(dest, cards[0]);
+        if (variant === "freecell" && cards.length > 1) {
+          const emptyCells = state.cells.filter((c) => !c).length;
+          const emptyCols = state.tab.filter((p, i) => !p.length && i !== to.col).length;
+          if (cards.length > (emptyCells + 1) * (2 ** emptyCols)) {
+            return "Not enough free cells to move that stack.";
+          }
+        }
+      }
+      return "That move is not allowed.";
+    }
+
     function expose(col) {
       const p = state.tab[col];
       if (p && p.length && !top(p).up) top(p).up = true;
@@ -232,14 +302,27 @@
       pushUndo();
       if (variant === "spider" || variant === "spiderette") {
         const n = variant === "spiderette" ? 7 : 10;
-        if (state.tab.some((p) => !p.length) || !state.stock.length) return undo.pop();
+        if (state.tab.some((p) => !p.length)) {
+          undo.pop();
+          toast("Fill empty columns before dealing.");
+          return;
+        }
+        if (!state.stock.length) {
+          undo.pop();
+          toast("No cards left in the stock.");
+          return;
+        }
         for (let i = 0; i < n; i++) {
           const c = state.stock.pop();
           c.up = true;
           state.tab[i].push(c);
         }
       } else if (variant === "scorpion") {
-        if (!state.stock.length) return undo.pop();
+        if (!state.stock.length) {
+          undo.pop();
+          toast("No cards left to deal.");
+          return;
+        }
         for (let i = 0; i < 3 && state.stock.length; i++) {
           const c = state.stock.pop();
           c.up = true;
@@ -257,6 +340,10 @@
           c.up = false;
           state.stock.push(c);
         }
+      } else {
+        undo.pop();
+        toast("No cards left in the stock.");
+        return;
       }
       state.sel = null;
       draw();
@@ -289,7 +376,10 @@
         if (!wasteTop) return;
         if (info.kind === "tab") {
           const card = top(state.tab[info.col]);
-          if (!card || Math.abs(card.r - wasteTop.r) !== 1) return;
+          if (!card || Math.abs(card.r - wasteTop.r) !== 1) {
+            toast("Play a card one rank higher or lower.");
+            return;
+          }
           pushUndo();
           state.waste.push(state.tab[info.col].pop());
           draw();
@@ -309,6 +399,8 @@
             state.py[info.r][info.c] = null;
             faceTri();
             draw();
+          } else {
+            toast("Play a card one rank higher or lower.");
           }
         }
         return;
@@ -335,13 +427,14 @@
           draw();
           return;
         }
+        if (ca && pick && ca.id !== pick.id) toast("Cards must add up to 13.");
         state.sel = info;
         draw();
         return;
       }
 
-      if (info.kind === "found") return;
       if (info.kind === "stock") { clickStock(); return; }
+      if (info.kind === "found" && !state.sel) return;
 
       if (!state.sel) {
         if (info.kind === "waste" && !state.waste.length) return;
@@ -358,7 +451,10 @@
 
       pushUndo();
       const moved = applyMove(from, info);
-      if (!moved) undo.pop();
+      if (!moved) {
+        undo.pop();
+        toast(moveFailMsg(from, info));
+      }
       state.sel = null;
       clearSpiderRuns();
       if (state.tab) state.tab.forEach((_, i) => expose(i));
