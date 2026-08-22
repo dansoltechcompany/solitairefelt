@@ -65,17 +65,29 @@ button, input { font-family: inherit; }
 .brand {
   display: flex;
   align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
   flex-shrink: 0;
 }
-.brand:hover { opacity: 0.92; }
-.brand-wordmark {
+.brand:hover { color: #fff; opacity: 0.94; }
+.brand-logo {
+  width: 32px;
   height: 32px;
-  width: auto;
+  flex-shrink: 0;
   display: block;
 }
-.brand-text,
-.brand-accent { letter-spacing: -0.045em; }
-.brand-accent { color: var(--gold); font-weight: 800; }
+.brand-name {
+  font-weight: 700;
+  font-size: 1.08rem;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  line-height: 1;
+}
+.brand-accent {
+  color: var(--gold);
+  font-weight: 800;
+}
 
 nav.primary {
   display: flex;

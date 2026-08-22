@@ -144,7 +144,7 @@ function page({ title, desc, canonical, extraHead, body, rootRel, bodyClass }) {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="${rootRel}/css/site.css?v=25" />
+  <link rel="stylesheet" href="${rootRel}/css/site.css?v=29" />
   <link rel="stylesheet" href="${rootRel}/css/games.css?v=27" />
   ${extraHead || ""}
 </head>

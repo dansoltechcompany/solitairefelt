@@ -14,7 +14,7 @@ window.BA.header = function () {
   return `
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="${r}/index.html"><img class="brand-wordmark" src="${r}/img/logo.svg?v=3" alt="SolitaireFelt" width="208" height="42" /></a>
+      <a class="brand" href="${r}/index.html"><img class="brand-logo" src="${r}/img/logo-mark.svg?v=7" alt="" width="32" height="32" /><span class="brand-name">Solitaire<span class="brand-accent">Felt</span></span></a>
       <button class="nav-toggle" type="button" aria-label="Open menu">Menu</button>
       <nav class="primary">
         <a href="${r}/games/klondike-solitaire/index.html" data-nav="klondike">Solitaire</a>
@@ -40,7 +40,7 @@ window.BA.footer = function () {
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <strong class="brand-text">Solitaire<span class="brand-accent">Felt</span></strong>
+        <strong>Solitaire<span class="brand-accent">Felt</span></strong>
         <p>${tagline}</p>
       </div>
       <div>
