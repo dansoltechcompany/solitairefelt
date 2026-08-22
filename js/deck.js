@@ -12,7 +12,7 @@ window.BA = window.BA || {};
 
   function src(name) {
     const root = (window.BA.root || ".").replace(/\/$/, "");
-    return root + "/img/deck/" + name + "?v=4";
+    return root + "/img/deck/" + name + "?v=5";
   }
 
   window.BA.cardHTML = function (c) {

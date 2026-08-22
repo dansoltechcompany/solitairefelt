@@ -1,18 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225 314" width="225" height="314">
-  <rect width="225" height="314" rx="12" fill="#f7f4ee"/>
-  <rect x="8" y="8" width="209" height="298" rx="8" fill="#b71424"/>
-  <rect x="8" y="8" width="209" height="298" rx="8" fill="url(#lat)"/>
-  <rect x="14" y="14" width="197" height="286" rx="6" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2"/>
-  <rect x="20" y="20" width="185" height="274" rx="4" fill="none" stroke="#fff" stroke-opacity=".2"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 225 314" width="225" height="314">
   <defs>
-    <pattern id="lat" width="14" height="14" patternUnits="userSpaceOnUse">
-      <path d="M7 0 L14 7 L7 14 L0 7 Z" fill="none" stroke="#fff" stroke-width="1.15" opacity=".85"/>
+    <pattern id="lat" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M8 0 L16 8 L8 16 L0 8 Z" fill="none" stroke="#fff" stroke-width="1.2" opacity=".88"/>
+      <path d="M8 3 L13 8 L8 13 L3 8 Z" fill="none" stroke="#fff" stroke-width="0.7" opacity=".35"/>
     </pattern>
+    <path id="heart" d="M6 2.2c-1.5-2.2-4.8-.9-4.8 1.7 0 3.2 4.8 5.8 4.8 5.8s4.8-2.6 4.8-5.8c0-2.6-3.3-3.9-4.8-1.7z"/>
+    <path id="spade" d="M6 0C2.8 3.6 0 6.1 0 8.4c0 1.9 1.4 3.1 3.1 3.1.9 0 1.7-.3 2.2-.9L5 12.2H7l-.3-1.6c.5.6 1.3.9 2.2.9 1.7 0 3.1-1.2 3.1-3.1C12 6.1 9.2 3.6 6 0z"/>
+    <path id="diamond" d="M6 0 L11.2 6.5 L6 13 L0.8 6.5 Z"/>
+    <path id="club" d="M6 1.2a2.4 2.4 0 0 0-2.35 3.05A2.45 2.45 0 0 0 1.2 6.6c0 1.5 1.2 2.5 2.7 2.5.7 0 1.35-.2 1.85-.55L5.4 11.2h1.2l-.35-2.65c.5.35 1.15.55 1.85.55 1.5 0 2.7-1 2.7-2.5a2.45 2.45 0 0 0-2.45-2.35A2.4 2.4 0 0 0 6 1.2z"/>
   </defs>
-  <polygon points="112.5,118 148,157 112.5,196 77,157" fill="#f7f4ee"/>
-  <polygon points="112.5,128 140,157 112.5,186 85,157" fill="#b71424"/>
-  <rect x="100" y="142" width="10" height="14" rx="1.5" fill="#f7f4ee" transform="rotate(-16 105 149)"/>
-  <rect x="115" y="142" width="10" height="14" rx="1.5" fill="#f7f4ee" transform="rotate(14 120 149)"/>
-  <text x="112.5" y="172" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="5.4" font-weight="700" fill="#f7f4ee" letter-spacing="0.2">solitairefelt</text>
-  <text x="112.5" y="181" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="5.2" font-weight="800" fill="#f5d547" letter-spacing="0.6">.com</text>
+
+  <rect width="225" height="314" rx="14" fill="#f7f4ee"/>
+  <rect x="7" y="7" width="211" height="300" rx="10" fill="#b71424"/>
+  <rect x="7" y="7" width="211" height="300" rx="10" fill="url(#lat)"/>
+  <rect x="13" y="13" width="199" height="288" rx="7" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2.2"/>
+  <rect x="19" y="19" width="187" height="276" rx="5" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="1.2"/>
+
+  <!-- White diamond medallion (wide enough for full name) -->
+  <polygon points="112.5,102 168,157 112.5,212 57,157" fill="#f7f4ee"/>
+  <polygon points="112.5,108 161,157 112.5,206 64,157" fill="none" stroke="#b71424" stroke-width="1.4" opacity=".35"/>
+
+  <!-- Mini card: hearts + spades -->
+  <g transform="translate(92 138) rotate(-18)">
+    <rect x="-9" y="-13" width="18" height="26" rx="2.2" fill="#b71424"/>
+    <rect x="-7.5" y="-11.5" width="15" height="23" rx="1.5" fill="#fff" opacity=".12"/>
+    <g transform="translate(-4.2 -7.5) scale(0.55)" fill="#f7f4ee"><use xlink:href="#heart"/></g>
+    <g transform="translate(-3.6 1.2) scale(0.5)" fill="#f7f4ee"><use xlink:href="#spade"/></g>
+  </g>
+
+  <!-- Mini card: diamonds + clubs -->
+  <g transform="translate(133 138) rotate(18)">
+    <rect x="-9" y="-13" width="18" height="26" rx="2.2" fill="#b71424"/>
+    <rect x="-7.5" y="-11.5" width="15" height="23" rx="1.5" fill="#fff" opacity=".12"/>
+    <g transform="translate(-4.2 -7.2) scale(0.48)" fill="#f7f4ee"><use xlink:href="#diamond"/></g>
+    <g transform="translate(-3.8 1.5) scale(0.5)" fill="#f7f4ee"><use xlink:href="#club"/></g>
+  </g>
+
+  <text x="112.5" y="178" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.2" font-weight="700" fill="#b71424" letter-spacing="0.15">solitairefelt</text>
 </svg>
