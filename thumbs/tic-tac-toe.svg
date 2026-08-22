@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 450" width="360" height="450">
+    <defs>
+      <filter id="ds-tictactoe" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity="0.5"/>
+      </filter>
+      <linearGradient id="vg-tictactoe" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.58" stop-color="#000" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="360" height="450" fill="#120c08"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="#5c3a16"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="none" stroke="#e8c97a" stroke-width="1.4" opacity="0.35"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#1e2a22"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#0c1410" opacity="0.36"/>
+    <ellipse cx="180" cy="86" rx="124" ry="46" fill="#fff" opacity="0.08"/>
+    <line x1="130" y1="70" x2="130" y2="300" stroke="#e8c97a" stroke-width="8"/>
+    <line x1="230" y1="70" x2="230" y2="300" stroke="#e8c97a" stroke-width="8"/>
+    <line x1="50" y1="145" x2="310" y2="145" stroke="#e8c97a" stroke-width="8"/>
+    <line x1="50" y1="225" x2="310" y2="225" stroke="#e8c97a" stroke-width="8"/>
+    <text x="90" y="130" text-anchor="middle" font-size="56" fill="#d4a84b">X</text>
+    <text x="180" y="210" text-anchor="middle" font-size="56" fill="#cfc4ae">O</text>
+    
+    <rect width="360" height="450" fill="url(#vg-tictactoe)" pointer-events="none"/>
+  </svg>

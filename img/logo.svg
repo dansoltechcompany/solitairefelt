@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" role="img" aria-label="SolitaireFelt">
+  <defs>
+    <linearGradient id="lg-felt" x1="4" y1="2" x2="36" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a7a54"/>
+      <stop offset="1" stop-color="#0a3d2b"/>
+    </linearGradient>
+    <linearGradient id="lg-ivory" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#faf6eb"/>
+      <stop offset="1" stop-color="#dfd0b0"/>
+    </linearGradient>
+    <linearGradient id="lg-back" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ef4458"/>
+      <stop offset="1" stop-color="#b81024"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(2 6)">
+    <rect width="32" height="32" rx="8" fill="url(#lg-felt)"/>
+    <rect x="1.25" y="1.25" width="29.5" height="29.5" rx="6.75" fill="none" stroke="#f5d547" stroke-opacity="0.5" stroke-width="1"/>
+    <g transform="rotate(13 21 15)">
+      <rect x="14.5" y="7" width="11" height="15" rx="2" fill="url(#lg-back)"/>
+    </g>
+    <g>
+      <rect x="6" y="9" width="11" height="15" rx="2" fill="url(#lg-ivory)" stroke="#c4b088" stroke-width="0.6"/>
+      <path fill="#141414" d="M11.5 13.8c0-1.65 1.65-2.85 1.65-2.85s1.65 1.2 1.65 2.85c0 1.45-1.65 2.95-1.65 2.95s-1.65-1.5-1.65-2.95z"/>
+      <rect x="10.2" y="17.2" width="3.6" height="1.1" rx="0.3" fill="#141414"/>
+    </g>
+  </g>
+  <text x="46" y="29" font-family="Outfit, Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="-0.03em">Solitaire</text>
+  <text x="138" y="29" font-family="Outfit, Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#f5d547" letter-spacing="-0.03em">Felt</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 450" width="360" height="450">
+    <defs>
+      <filter id="ds-pentadaily" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity="0.5"/>
+      </filter>
+      <linearGradient id="vg-pentadaily" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.58" stop-color="#000" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="360" height="450" fill="#120c08"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="#5c3a16"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="none" stroke="#e8c97a" stroke-width="1.4" opacity="0.35"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#1a1a1c"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#0a0a0c" opacity="0.36"/>
+    <ellipse cx="180" cy="86" rx="124" ry="46" fill="#fff" opacity="0.08"/>
+    <g filter="url(#ds-pentadaily)">
+      <rect x="38" y="154" width="50" height="58" rx="8" fill="#2a2a2e"/>
+      <text x="63" y="193" text-anchor="middle" font-size="24" font-weight="800" fill="#fff" font-family="Outfit, Segoe UI, sans-serif">P</text>
+    </g><g filter="url(#ds-pentadaily)">
+      <rect x="96" y="154" width="50" height="58" rx="8" fill="#c9a227"/>
+      <text x="121" y="193" text-anchor="middle" font-size="24" font-weight="800" fill="#fff" font-family="Outfit, Segoe UI, sans-serif">E</text>
+    </g><g filter="url(#ds-pentadaily)">
+      <rect x="154" y="154" width="50" height="58" rx="8" fill="#3d8b5a"/>
+      <text x="179" y="193" text-anchor="middle" font-size="24" font-weight="800" fill="#fff" font-family="Outfit, Segoe UI, sans-serif">N</text>
+    </g><g filter="url(#ds-pentadaily)">
+      <rect x="212" y="154" width="50" height="58" rx="8" fill="#c9a227"/>
+      <text x="237" y="193" text-anchor="middle" font-size="24" font-weight="800" fill="#fff" font-family="Outfit, Segoe UI, sans-serif">T</text>
+    </g><g filter="url(#ds-pentadaily)">
+      <rect x="270" y="154" width="50" height="58" rx="8" fill="#2a2a2e"/>
+      <text x="295" y="193" text-anchor="middle" font-size="24" font-weight="800" fill="#fff" font-family="Outfit, Segoe UI, sans-serif">A</text>
+    </g>
+    <rect width="360" height="450" fill="url(#vg-pentadaily)" pointer-events="none"/>
+  </svg>

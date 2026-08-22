@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 450" width="360" height="450">
+    <defs>
+      <filter id="ds-rushlanes" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity="0.5"/>
+      </filter>
+      <linearGradient id="vg-rushlanes" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.58" stop-color="#000" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="360" height="450" fill="#120c08"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="#5c3a16"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="none" stroke="#e8c97a" stroke-width="1.4" opacity="0.35"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#4a1515"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#1a0808" opacity="0.36"/>
+    <ellipse cx="180" cy="86" rx="124" ry="46" fill="#fff" opacity="0.08"/>
+    <rect x="40" y="70" width="280" height="240" fill="#2a0c0c"/>
+    <rect x="90" y="160" width="130" height="44" rx="8" fill="#d4a84b"/>
+    <rect x="50" y="90" width="50" height="120" rx="8" fill="#6a8a9a"/>
+    <rect x="250" y="100" width="50" height="150" rx="8" fill="#4a6a7a"/>
+    <rect x="160" y="230" width="140" height="44" rx="8" fill="#8aa"/>
+    
+    <rect width="360" height="450" fill="url(#vg-rushlanes)" pointer-events="none"/>
+  </svg>

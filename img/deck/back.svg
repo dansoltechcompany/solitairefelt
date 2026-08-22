@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225 314" width="225" height="314">
+  <rect width="225" height="314" rx="12" fill="#f7f4ee"/>
+  <rect x="8" y="8" width="209" height="298" rx="8" fill="#b71424"/>
+  <rect x="8" y="8" width="209" height="298" rx="8" fill="url(#lat)"/>
+  <rect x="14" y="14" width="197" height="286" rx="6" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2"/>
+  <rect x="20" y="20" width="185" height="274" rx="4" fill="none" stroke="#fff" stroke-opacity=".2"/>
+  <defs>
+    <pattern id="lat" width="14" height="14" patternUnits="userSpaceOnUse">
+      <path d="M7 0 L14 7 L7 14 L0 7 Z" fill="none" stroke="#fff" stroke-width="1.15" opacity=".85"/>
+    </pattern>
+  </defs>
+  <polygon points="112.5,118 148,157 112.5,196 77,157" fill="#f7f4ee"/>
+  <polygon points="112.5,128 140,157 112.5,186 85,157" fill="#b71424"/>
+  <rect x="100" y="146" width="10" height="14" rx="1.5" fill="#f7f4ee" transform="rotate(-16 105 153)"/>
+  <rect x="115" y="146" width="10" height="14" rx="1.5" fill="#f7f4ee" transform="rotate(14 120 153)"/>
+  <text x="112.5" y="176" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#f7f4ee" letter-spacing="1">ARCADE</text>
+</svg>

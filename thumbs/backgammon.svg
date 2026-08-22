@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 450" width="360" height="450">
+    <defs>
+      <filter id="ds-backgammon" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity="0.5"/>
+      </filter>
+      <linearGradient id="vg-backgammon" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.58" stop-color="#000" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="360" height="450" fill="#120c08"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="#5c3a16"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="none" stroke="#e8c97a" stroke-width="1.4" opacity="0.35"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#5a3a1a"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#201008" opacity="0.36"/>
+    <ellipse cx="180" cy="86" rx="124" ry="46" fill="#fff" opacity="0.08"/>
+    <ellipse cx="70" cy="120" rx="18" ry="18" fill="#3d8b7a"/><ellipse cx="115" cy="280" rx="18" ry="18" fill="#3d8b7a"/><ellipse cx="160" cy="120" rx="18" ry="18" fill="#3d8b7a"/><ellipse cx="205" cy="280" rx="18" ry="18" fill="#3d8b7a"/><ellipse cx="250" cy="120" rx="18" ry="18" fill="#3d8b7a"/><ellipse cx="295" cy="280" rx="18" ry="18" fill="#3d8b7a"/>
+    <ellipse cx="250" cy="280" rx="18" ry="18" fill="#c45c4a"/><ellipse cx="295" cy="120" rx="18" ry="18" fill="#c45c4a"/><ellipse cx="340" cy="280" rx="18" ry="18" fill="#c45c4a"/><ellipse cx="385" cy="120" rx="18" ry="18" fill="#c45c4a"/>
+    
+    <rect width="360" height="450" fill="url(#vg-backgammon)" pointer-events="none"/>
+  </svg>

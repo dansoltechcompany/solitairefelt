@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 450" width="360" height="450">
+    <defs>
+      <filter id="ds-dailysudoku" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity="0.5"/>
+      </filter>
+      <linearGradient id="vg-dailysudoku" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.58" stop-color="#000" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="360" height="450" fill="#120c08"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="#5c3a16"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="none" stroke="#e8c97a" stroke-width="1.4" opacity="0.35"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#0e4a4a"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#062424" opacity="0.36"/>
+    <ellipse cx="180" cy="86" rx="124" ry="46" fill="#fff" opacity="0.08"/>
+    <rect x="90" y="70" width="180" height="200" rx="16" fill="#f3ead7"/>
+    <text x="180" y="130" text-anchor="middle" font-size="18" fill="#0e4a4a" font-weight="700">TODAY</text>
+    <text x="180" y="210" text-anchor="middle" font-family="Georgia,serif" font-size="72" fill="#0e4a4a">31</text>
+    
+    <rect width="360" height="450" fill="url(#vg-dailysudoku)" pointer-events="none"/>
+  </svg>

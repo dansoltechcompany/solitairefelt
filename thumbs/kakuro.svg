@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 450" width="360" height="450">
+    <defs>
+      <filter id="ds-kakuro" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity="0.5"/>
+      </filter>
+      <linearGradient id="vg-kakuro" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.58" stop-color="#000" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="360" height="450" fill="#120c08"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="#5c3a16"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="none" stroke="#e8c97a" stroke-width="1.4" opacity="0.35"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#2a3a52"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#101820" opacity="0.36"/>
+    <ellipse cx="180" cy="86" rx="124" ry="46" fill="#fff" opacity="0.08"/>
+    <rect x="70" y="80" width="80" height="80" fill="#1a1a1a"/>
+    <text x="110" y="110" text-anchor="middle" fill="#e8c97a" font-size="14">4↓</text>
+    <text x="130" y="145" text-anchor="middle" fill="#e8c97a" font-size="14">16→</text>
+    <rect x="150" y="80" width="80" height="80" fill="#12553c"/>
+    <text x="190" y="135" text-anchor="middle" fill="#f3ead7" font-size="36" font-weight="800">9</text>
+    
+    <rect width="360" height="450" fill="url(#vg-kakuro)" pointer-events="none"/>
+  </svg>

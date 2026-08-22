@@ -1,0 +1,11 @@
+{
+  "name": "solitairefelt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node generate.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "validate:kakuro": "node scripts/validate-kakuro.mjs"
+  },
+  "devDependencies": {}
+}

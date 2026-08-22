@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 450" width="360" height="450">
+    <defs>
+      <filter id="ds-gemcascade" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity="0.5"/>
+      </filter>
+      <linearGradient id="vg-gemcascade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.58" stop-color="#000" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="360" height="450" fill="#120c08"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="#5c3a16"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="none" stroke="#e8c97a" stroke-width="1.4" opacity="0.35"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#2a0e28"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#100410" opacity="0.36"/>
+    <ellipse cx="180" cy="86" rx="124" ry="46" fill="#fff" opacity="0.08"/>
+    <rect x="80" y="100" width="70" height="70" rx="14" fill="#c45c4a"/><text x="115" y="148" text-anchor="middle" font-size="28">◆</text><rect x="160" y="90" width="70" height="70" rx="14" fill="#d4a84b"/><text x="195" y="138" text-anchor="middle" font-size="28">●</text><rect x="240" y="110" width="70" height="70" rx="14" fill="#3d8b7a"/><text x="275" y="158" text-anchor="middle" font-size="28">▲</text><rect x="80" y="190" width="70" height="70" rx="14" fill="#4a6fa5"/><text x="115" y="238" text-anchor="middle" font-size="28">■</text><rect x="160" y="180" width="70" height="70" rx="14" fill="#8a4aaa"/><text x="195" y="228" text-anchor="middle" font-size="28">✚</text><rect x="240" y="200" width="70" height="70" rx="14" fill="#c45c4a"/><text x="275" y="248" text-anchor="middle" font-size="28">◆</text>
+    
+    <rect width="360" height="450" fill="url(#vg-gemcascade)" pointer-events="none"/>
+  </svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 450" width="360" height="450">
+    <defs>
+      <filter id="ds-connectfour" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity="0.5"/>
+      </filter>
+      <linearGradient id="vg-connectfour" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.58" stop-color="#000" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="360" height="450" fill="#120c08"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="#5c3a16"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="none" stroke="#e8c97a" stroke-width="1.4" opacity="0.35"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#0b2a52"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#061428" opacity="0.36"/>
+    <ellipse cx="180" cy="86" rx="124" ry="46" fill="#fff" opacity="0.08"/>
+    <rect x="40" y="70" width="280" height="240" rx="20" fill="#0a3a6b"/>
+    <circle cx="70" cy="140" r="16" fill="#d4a84b"/>
+      <circle cx="70" cy="190" r="16" fill="#d4a84b"/>
+      <circle cx="70" cy="240" r="16" fill="#082018"/><circle cx="110" cy="140" r="16" fill="#c45c4a"/>
+      <circle cx="110" cy="190" r="16" fill="#c45c4a"/>
+      <circle cx="110" cy="240" r="16" fill="#082018"/><circle cx="150" cy="140" r="16" fill="#082018"/>
+      <circle cx="150" cy="190" r="16" fill="#d4a84b"/>
+      <circle cx="150" cy="240" r="16" fill="#082018"/><circle cx="190" cy="140" r="16" fill="#d4a84b"/>
+      <circle cx="190" cy="190" r="16" fill="#c45c4a"/>
+      <circle cx="190" cy="240" r="16" fill="#082018"/><circle cx="230" cy="140" r="16" fill="#c45c4a"/>
+      <circle cx="230" cy="190" r="16" fill="#d4a84b"/>
+      <circle cx="230" cy="240" r="16" fill="#082018"/><circle cx="270" cy="140" r="16" fill="#082018"/>
+      <circle cx="270" cy="190" r="16" fill="#c45c4a"/>
+      <circle cx="270" cy="240" r="16" fill="#082018"/><circle cx="310" cy="140" r="16" fill="#d4a84b"/>
+      <circle cx="310" cy="190" r="16" fill="#d4a84b"/>
+      <circle cx="310" cy="240" r="16" fill="#082018"/>
+    
+    <rect width="360" height="450" fill="url(#vg-connectfour)" pointer-events="none"/>
+  </svg>

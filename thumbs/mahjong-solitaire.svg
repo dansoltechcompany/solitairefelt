@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 450" width="360" height="450">
+    <defs>
+      <filter id="ds-mahjongsolitaire" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity="0.5"/>
+      </filter>
+      <linearGradient id="vg-mahjongsolitaire" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.58" stop-color="#000" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="360" height="450" fill="#120c08"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="#5c3a16"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="none" stroke="#e8c97a" stroke-width="1.4" opacity="0.35"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#6b2a22"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#2a100c" opacity="0.36"/>
+    <ellipse cx="180" cy="86" rx="124" ry="46" fill="#fff" opacity="0.08"/>
+    <g transform="translate(92 108)" filter="url(#ds-mahjongsolitaire)">
+        <rect x="4" y="6" width="68" height="86" rx="8" fill="#5a3a1c"/>
+        <rect width="68" height="86" rx="8" fill="#fff6e0" stroke="#d4a84b" stroke-width="1.5"/>
+        <text x="34" y="56" text-anchor="middle" font-size="34" fill="#1a4a2a">東</text>
+      </g><g transform="translate(158 86)" filter="url(#ds-mahjongsolitaire)">
+        <rect x="4" y="6" width="68" height="86" rx="8" fill="#5a3a1c"/>
+        <rect width="68" height="86" rx="8" fill="#fff6e0" stroke="#d4a84b" stroke-width="1.5"/>
+        <text x="34" y="56" text-anchor="middle" font-size="34" fill="#b42318">中</text>
+      </g><g transform="translate(224 108)" filter="url(#ds-mahjongsolitaire)">
+        <rect x="4" y="6" width="68" height="86" rx="8" fill="#5a3a1c"/>
+        <rect width="68" height="86" rx="8" fill="#fff6e0" stroke="#d4a84b" stroke-width="1.5"/>
+        <text x="34" y="56" text-anchor="middle" font-size="34" fill="#1a1a1a">白</text>
+      </g><g transform="translate(124 178)" filter="url(#ds-mahjongsolitaire)">
+        <rect x="4" y="6" width="68" height="86" rx="8" fill="#5a3a1c"/>
+        <rect width="68" height="86" rx="8" fill="#fff6e0" stroke="#d4a84b" stroke-width="1.5"/>
+        <text x="34" y="56" text-anchor="middle" font-size="34" fill="#1a4a2a">發</text>
+      </g><g transform="translate(196 192)" filter="url(#ds-mahjongsolitaire)">
+        <rect x="4" y="6" width="68" height="86" rx="8" fill="#5a3a1c"/>
+        <rect width="68" height="86" rx="8" fill="#fff6e0" stroke="#d4a84b" stroke-width="1.5"/>
+        <text x="34" y="56" text-anchor="middle" font-size="34" fill="#b42318">五</text>
+      </g>
+    <rect width="360" height="450" fill="url(#vg-mahjongsolitaire)" pointer-events="none"/>
+  </svg>

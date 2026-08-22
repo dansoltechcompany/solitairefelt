@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 450" width="360" height="450">
+    <defs>
+      <filter id="ds-mancala" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity="0.5"/>
+      </filter>
+      <linearGradient id="vg-mancala" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.58" stop-color="#000" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="360" height="450" fill="#120c08"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="#5c3a16"/>
+    <rect x="8" y="8" width="344" height="434" rx="32" fill="none" stroke="#e8c97a" stroke-width="1.4" opacity="0.35"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#4a3010"/>
+    <rect x="22" y="22" width="316" height="406" rx="22" fill="#1c1208" opacity="0.36"/>
+    <ellipse cx="180" cy="86" rx="124" ry="46" fill="#fff" opacity="0.08"/>
+    <rect x="30" y="140" width="300" height="140" rx="70" fill="#6b4a22"/>
+    <ellipse cx="60" cy="210" rx="22" ry="50" fill="#3a280e"/>
+    <ellipse cx="300" cy="210" rx="22" ry="50" fill="#3a280e"/>
+    <circle cx="100" cy="180" r="12" fill="#e8c97a"/><circle cx="100" cy="240" r="12" fill="#d4a84b"/><circle cx="132" cy="180" r="12" fill="#e8c97a"/><circle cx="132" cy="240" r="12" fill="#d4a84b"/><circle cx="164" cy="180" r="12" fill="#e8c97a"/><circle cx="164" cy="240" r="12" fill="#d4a84b"/><circle cx="196" cy="180" r="12" fill="#e8c97a"/><circle cx="196" cy="240" r="12" fill="#d4a84b"/><circle cx="228" cy="180" r="12" fill="#e8c97a"/><circle cx="228" cy="240" r="12" fill="#d4a84b"/><circle cx="260" cy="180" r="12" fill="#e8c97a"/><circle cx="260" cy="240" r="12" fill="#d4a84b"/>
+    
+    <rect width="360" height="450" fill="url(#vg-mancala)" pointer-events="none"/>
+  </svg>
