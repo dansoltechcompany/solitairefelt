@@ -1,0 +1,28 @@
+# Cloudflare Pages headers — keep HTML fresh; versioned assets can cache briefly.
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/games/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/categories/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/css/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/js/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/engines/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/img/deck/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/favicon.svg
+  Cache-Control: public, max-age=3600, must-revalidate
