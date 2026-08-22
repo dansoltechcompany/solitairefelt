@@ -65,21 +65,17 @@ button, input { font-family: inherit; }
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.08rem;
-  letter-spacing: -0.03em;
   flex-shrink: 0;
 }
-.brand:hover { color: #fff; }
-.brand-accent { color: var(--gold); font-weight: 800; }
-.brand-logo {
-  width: 32px;
+.brand:hover { opacity: 0.92; }
+.brand-wordmark {
   height: 32px;
-  flex-shrink: 0;
+  width: auto;
   display: block;
 }
+.brand-text,
+.brand-accent { letter-spacing: -0.045em; }
+.brand-accent { color: var(--gold); font-weight: 800; }
 
 nav.primary {
   display: flex;

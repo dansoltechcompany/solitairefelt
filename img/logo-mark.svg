@@ -1,27 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="SolitaireFelt">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="SolitaireFelt">
   <defs>
-    <linearGradient id="sf-felt" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#1a7a54"/>
-      <stop offset="1" stop-color="#0a3d2b"/>
+    <linearGradient id="m-felt" x1="24" y1="16" x2="156" y2="168" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#187a52"/>
+      <stop offset="0.55" stop-color="#126644"/>
+      <stop offset="1" stop-color="#083d2a"/>
     </linearGradient>
-    <linearGradient id="sf-ivory" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#faf6eb"/>
-      <stop offset="1" stop-color="#dfd0b0"/>
+    <linearGradient id="m-gold" x1="56" y1="44" x2="124" y2="148" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff0a8"/>
+      <stop offset="0.45" stop-color="#f5d547"/>
+      <stop offset="1" stop-color="#c99a12"/>
     </linearGradient>
-    <linearGradient id="sf-back" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ef4458"/>
-      <stop offset="1" stop-color="#b81024"/>
-    </linearGradient>
+    <radialGradient id="m-shine" cx="0.32" cy="0.18" r="0.62">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="m-fiber" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(24)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
   </defs>
-  <rect width="32" height="32" rx="8" fill="url(#sf-felt)"/>
-  <rect x="1.25" y="1.25" width="29.5" height="29.5" rx="6.75" fill="none" stroke="#f5d547" stroke-opacity="0.5" stroke-width="1"/>
-  <g transform="rotate(13 21 15)">
-    <rect x="14.5" y="7" width="11" height="15" rx="2" fill="url(#sf-back)"/>
-    <rect x="15.5" y="8" width="9" height="13" rx="1.5" fill="#c81e32" opacity="0.35"/>
-  </g>
-  <g>
-    <rect x="6" y="9" width="11" height="15" rx="2" fill="url(#sf-ivory)" stroke="#c4b088" stroke-width="0.6"/>
-    <path fill="#141414" d="M11.5 13.8c0-1.65 1.65-2.85 1.65-2.85s1.65 1.2 1.65 2.85c0 1.45-1.65 2.95-1.65 2.95s-1.65-1.5-1.65-2.95z"/>
-    <rect x="10.2" y="17.2" width="3.6" height="1.1" rx="0.3" fill="#141414"/>
-  </g>
+  <rect width="180" height="180" rx="42" fill="url(#m-felt)"/>
+  <rect width="180" height="180" rx="42" fill="url(#m-fiber)"/>
+  <rect width="180" height="180" rx="42" fill="url(#m-shine)"/>
+  <rect x="6" y="6" width="168" height="168" rx="36" fill="none" stroke="#f5d547" stroke-opacity="0.24" stroke-width="2.5"/>
+  <path fill="url(#m-gold)" d="M90 46c-17.2 0-29.3 13.2-29.3 29.5 0 18.8 29.3 45.8 29.3 45.8s29.3-27 29.3-45.8C119.3 59.2 107.2 46 90 46zm-17.2 70.5h34.4v10.4H72.8z"/>
 </svg>
