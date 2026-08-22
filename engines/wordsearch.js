@@ -1,5 +1,5 @@
 (function () {
-  const BANK = ["SOLITAIRE","SUDOKU","MAHJONG","PUZZLE","ARCADE","BROWSER","SPIDER","FREECELL","QUEEN","KING","PAWN","CHECK","KNIGHT","RIVER","STONE","FLAME","CLOUD","MAPLE"];
+  const BANK = ["SOLITAIRE","SUDOKU","MAHJONG","PUZZLE","FELT","CARDS","SPIDER","FREECELL","QUEEN","KING","PAWN","CHECK","KNIGHT","RIVER","STONE","FLAME","CLOUD","MAPLE"];
   window.BA.games.wordsearch = function (board, cfg, toolbar, hud) {
     const N = 12;
     let grid, found, words, drag = [];
