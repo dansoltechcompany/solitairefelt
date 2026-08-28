@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Play Kakuro Free Online | SolitaireFelt</title>
-  <meta name="description" content="Cross sums with no repeats in a run — the crossword of numbers. Play Kakuro in your browser — no download." />
+  <meta name="description" content="Kakuro online — fill runs to match sum clues, no digit repeats in a run. Free cross-sum puzzle." />
   <link rel="canonical" href="https://solitairefelt.com/games/kakuro/" />
   <meta property="og:title" content="Play Kakuro Free Online | SolitaireFelt" />
-  <meta property="og:description" content="Cross sums with no repeats in a run — the crossword of numbers. Play Kakuro in your browser — no download." />
+  <meta property="og:description" content="Kakuro online — fill runs to match sum clues, no digit repeats in a run. Free cross-sum puzzle." />
   <meta property="og:site_name" content="SolitaireFelt" />
   <meta property="og:url" content="https://solitairefelt.com/games/kakuro/" />
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
@@ -15,12 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../css/site.css?v=31" />
-  <link rel="stylesheet" href="../../css/games.css?v=29" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Kakuro","description":"Cross sums with no repeats in a run — the crossword of numbers.","url":"https://solitairefelt.com/games/kakuro/","genre":"sudoku","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <link rel="stylesheet" href="../../css/site.css?v=33" />
+  <link rel="stylesheet" href="../../css/games.css?v=30" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Kakuro","description":"Kakuro online — fill runs to match sum clues, no digit repeats in a run. Free cross-sum puzzle.","url":"https://solitairefelt.com/games/kakuro/","genre":"sudoku","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Kakuro like Killer Sudoku?","acceptedAnswer":{"@type":"Answer","text":"Both use sums without repeating digits in a group, but kakuro is run-based like a crossword while killer uses sudoku boxes plus cages."}}]}</script>
 </head>
 <body data-root="../.." class="play-page">
-  <script src="../../js/chrome.js"></script>
+  <script src="../../js/chrome.js?v=3"></script>
   <script src="../../js/catalog.js"></script>
   <div id="site-header"></div>
   <main class="game-page">
@@ -43,28 +44,29 @@
       </section>
       <div class="play-copy">
         <div class="wrap">
-          <article class="prose">
-<p>Kakuro is a free browser game on SolitaireFelt, built for a short break that can stretch into a long session. There is no download, no sign-in, and no backend: the puzzle runs in this tab and your best results stay in local storage on your device. That keeps the page fast, private, and easy for Google to crawl as a real game page rather than an empty iframe.</p>
-<p>Cross sums with no repeats in a run — the crossword of numbers. It sits in our Sudoku & Numbers collection because people already search for this mechanic by name. The rules below match the familiar version of the game, with original board art and a full felt table for play.</p>
-<h2>How to play Kakuro</h2>
-<p>Fill white cells with 1–9 so each horizontal or vertical run matches its clue sum. Digits cannot repeat within a run.</p>
-<h2>Tips</h2>
-<p>Look for runs with only one combination at the clue sum. Fill crossing cells first to break ties.</p>
-<p>If you enjoy Kakuro, open the related games under this page. A full niche catalog — solitaire variants, mahjong layouts, daily sudoku, word puzzles, and board games versus a computer — is what makes SolitaireFelt worth bookmarking instead of a three-page demo.</p></article>
+          <article class="prose"><p>Kakuro looks like a crossword but uses sums. White runs have a clue; digits 1–9 fill the run, cannot repeat within that run, and must add to the clue.</p>
+<p>Black cells separate runs — horizontal and vertical clues intersect like a crossword.</p><h2>How to play Kakuro</h2>
+<ul><li>Each white run has a sum clue (shown at the start of the run).</li><li>Digits 1–9 fill white cells. No digit repeats within a single run.</li><li>Digits in a run must add exactly to the clue sum.</li><li>Crossing runs share cells — a digit must satisfy both its horizontal and vertical run.</li></ul>
+<h2>Strategy tips</h2>
+<ul><li>Learn unique combinations for short runs (e.g. sum 17 in two cells must be 8+9).</li><li>Fill runs that cross the most other runs first — they constrain the grid fastest.</li><li>A run of length N with sum S has limited possibilities; eliminate combos that need a digit already used in the crossing run.</li><li>Long runs with high sums leave fewer combinations — check reference tables mentally for 6-cell runs.</li><li>If kakuro feels dense, warm up on Mini Sudoku or Killer Sudoku for digit-placement practice.</li></ul>
+<h2>Common questions</h2>
+<h3>Is Kakuro like Killer Sudoku?</h3>
+<p>Both use sums without repeating digits in a group, but kakuro is run-based like a crossword while killer uses sudoku boxes plus cages.</p>
+</article>
           <div class="section-head"><h2>Related</h2></div>
-          <div class="related"><a class="card" href="../../games/sudoku-easy/index.html" data-category="sudoku" data-title="Sudoku Easy">
+          <div class="related"><a class="card" href="../../games/daily-kakuro/index.html" data-category="sudoku" data-title="Daily Kakuro">
     <div class="card-cover">
-      <img src="../../thumbs/sudoku-easy.svg?v=8" alt="Sudoku Easy" width="360" height="450" />
+      <img src="../../thumbs/daily-kakuro.svg?v=8" alt="Daily Kakuro" width="360" height="450" />
       
       <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Sudoku Easy</h3></span>
+      <span class="card-body"><h3>Daily Kakuro</h3></span>
     </div>
-  </a><a class="card" href="../../games/sudoku-medium/index.html" data-category="sudoku" data-title="Sudoku Medium">
+  </a><a class="card" href="../../games/killer-sudoku/index.html" data-category="sudoku" data-title="Killer Sudoku">
     <div class="card-cover">
-      <img src="../../thumbs/sudoku-medium.svg?v=8" alt="Sudoku Medium" width="360" height="450" />
+      <img src="../../thumbs/killer-sudoku.svg?v=8" alt="Killer Sudoku" width="360" height="450" />
       
       <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Sudoku Medium</h3></span>
+      <span class="card-body"><h3>Killer Sudoku</h3></span>
     </div>
   </a><a class="card" href="../../games/sudoku-hard/index.html" data-category="sudoku" data-title="Sudoku Hard">
     <div class="card-cover">
@@ -73,6 +75,13 @@
       <div class="card-play"><span>Play</span></div>
       <span class="card-body"><h3>Sudoku Hard</h3></span>
     </div>
+  </a><a class="card" href="../../games/crossword-daily/index.html" data-category="words" data-title="Mini Crossword">
+    <div class="card-cover">
+      <img src="../../thumbs/crossword-daily.svg?v=8" alt="Mini Crossword" width="360" height="450" />
+      
+      <div class="card-play"><span>Play</span></div>
+      <span class="card-body"><h3>Mini Crossword</h3></span>
+    </div>
   </a><a class="card" href="../../games/daily-sudoku/index.html" data-category="sudoku" data-title="Daily Sudoku">
     <div class="card-cover">
       <img src="../../thumbs/daily-sudoku.svg?v=8" alt="Daily Sudoku" width="360" height="450" />
@@ -80,25 +89,18 @@
       <div class="card-play"><span>Play</span></div>
       <span class="card-body"><h3>Daily Sudoku</h3></span>
     </div>
-  </a><a class="card" href="../../games/mini-sudoku/index.html" data-category="sudoku" data-title="Mini Sudoku 6×6">
+  </a><a class="card" href="../../games/nonogram-ink/index.html" data-category="puzzles" data-title="Nonogram Ink">
     <div class="card-cover">
-      <img src="../../thumbs/mini-sudoku.svg?v=8" alt="Mini Sudoku 6×6" width="360" height="450" />
+      <img src="../../thumbs/nonogram-ink.svg?v=8" alt="Nonogram Ink" width="360" height="450" />
       
       <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Mini Sudoku 6×6</h3></span>
-    </div>
-  </a><a class="card" href="../../games/minesweeper/index.html" data-category="sudoku" data-title="Minesweeper Beginner">
-    <div class="card-cover">
-      <img src="../../thumbs/minesweeper.svg?v=8" alt="Minesweeper Beginner" width="360" height="450" />
-      
-      <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Minesweeper Beginner</h3></span>
+      <span class="card-body"><h3>Nonogram Ink</h3></span>
     </div>
   </a></div>
         </div>
       </div>
     </main>
-    <script src="../../engines/kakuro.js?v=10"></script>
+    <script src="../../engines/kakuro.js?v=12"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const board = document.getElementById("board");

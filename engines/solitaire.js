@@ -574,17 +574,26 @@
         wrap.className = "solitaire-pyramid";
         wrap.style.position = "relative";
         const scale = cw / 84;
-        wrap.style.height = Math.round((variant === "pyramid" ? 420 : 360) * scale) + "px";
+        const ch = Math.round(cw * 314 / 225);
+        const rowStep = 28;
+        const rows = state.py.length;
+        let maxRight = cw;
+        wrap.style.height = Math.round((rows - 1) * rowStep * scale + ch) + "px";
+        wrap.style.marginBottom = "8px";
         state.py.forEach((row, r) => {
           row.forEach((c, col) => {
             if (!c) return;
             const node = elCard(c, selected({ kind: "py", r, c: col }) ? " selected" : "");
-            node.style.left = Math.round((36 + col * 86 + (7 - row.length) * 40) * scale) + "px";
-            node.style.top = Math.round((r * 28) * scale) + "px";
+            const left = Math.round((36 + col * 86 + (7 - row.length) * 40) * scale);
+            node.style.left = left + "px";
+            node.style.top = Math.round((r * rowStep) * scale) + "px";
+            maxRight = Math.max(maxRight, left + cw);
             node.onclick = () => onCard({ kind: "py", r, c: col });
             wrap.appendChild(node);
           });
         });
+        wrap.style.width = maxRight + "px";
+        root.style.setProperty("--table-w", maxRight + "px");
         root.appendChild(wrap);
         const row = document.createElement("div");
         row.className = "solitaire-row solitaire-row--stock";
@@ -630,7 +639,10 @@
           state.tab.forEach((pile, col) => {
             const p = document.createElement("div");
             p.className = "pile pile-tab" + (pile.length ? "" : " pile-empty");
-            p.style.minHeight = "calc(var(--card-h) + 10 * var(--card-back-peek))";
+            /* Reserve only a little headroom so empty piles stay droppable without a tall empty felt. */
+            p.style.minHeight = pile.length
+              ? "var(--card-h)"
+              : "calc(var(--card-h) + 2 * var(--card-back-peek))";
             p.style.width = "var(--card-w)";
             if (!pile.length) p.onclick = () => state.sel && onCard({ kind: "tab", col, idx: 0 });
             pile.forEach((c, idx) => {

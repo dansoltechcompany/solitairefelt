@@ -2,21 +2,55 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { GAMES, CATEGORIES, SITE } from "./js/catalog.mjs";
+import { GAME_CONTENT } from "./js/game-content.mjs";
 import { thumbSvg, heroFanSvg } from "./js/thumbs.mjs";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const out = (...p) => path.join(root, ...p);
 
 function article(g) {
-  const cat = CATEGORIES.find((c) => c.id === g.category);
+  const custom = GAME_CONTENT[g.id];
+  if (custom) return renderRichArticle(g, custom);
+  return renderFallbackArticle(g);
+}
+
+function renderRichArticle(g, c) {
+  let html = c.intro.map((p) => `<p>${p}</p>`).join("\n");
+  html += `<h2>How to play ${esc(g.title)}</h2>\n`;
+  if (Array.isArray(c.rules)) {
+    html += `<ul>${c.rules.map((r) => `<li>${r}</li>`).join("")}</ul>\n`;
+  } else {
+    html += `<p>${c.rules}</p>\n`;
+  }
+  html += `<h2>Strategy tips</h2>\n<ul>${c.tips.map((t) => `<li>${t}</li>`).join("")}</ul>\n`;
+  if (c.faq && c.faq.length) {
+    html += `<h2>Common questions</h2>\n`;
+    for (const { q, a } of c.faq) {
+      html += `<h3>${esc(q)}</h3>\n<p>${a}</p>\n`;
+    }
+  }
+  return html;
+}
+
+function renderFallbackArticle(g) {
   return `
-<p>${g.title} is a free browser game on ${SITE.name}, built for a short break that can stretch into a long session. There is no download, no sign-in, and no backend: the puzzle runs in this tab and your best results stay in local storage on your device. That keeps the page fast, private, and easy for Google to crawl as a real game page rather than an empty iframe.</p>
-<p>${g.short} It sits in our ${cat.title} collection because people already search for this mechanic by name. The rules below match the familiar version of the game, with original board art and a full felt table for play.</p>
-<h2>How to play ${g.title}</h2>
+<p>${esc(g.short)} Play in your browser on ${SITE.name} — no download or account.</p>
+<h2>How to play ${esc(g.title)}</h2>
 <p>${rules(g)}</p>
-<h2>Tips</h2>
-<p>${tips(g)}</p>
-<p>If you enjoy ${g.title}, open the related games under this page. A full niche catalog — solitaire variants, mahjong layouts, daily sudoku, word puzzles, and board games versus a computer — is what makes ${SITE.name} worth bookmarking instead of a three-page demo.</p>`;
+<h2>Strategy tips</h2>
+<p>${tips(g)}</p>`;
+}
+
+function relatedFor(g) {
+  const ids = GAME_CONTENT[g.id]?.related;
+  if (ids) {
+    return ids.map((id) => GAMES.find((x) => x.id === id)).filter(Boolean);
+  }
+  return GAMES.filter((x) => x.category === g.category && x.id !== g.id).slice(0, 6);
+}
+
+function pageDesc(g) {
+  return GAME_CONTENT[g.id]?.metaDesc || `${g.short} Play ${g.title} in your browser — no download.`;
 }
 
 function rules(g) {
@@ -101,6 +135,8 @@ function tips(g) {
     spiderette: "Seven columns fill fast. Keep one empty column as long as you can for reshuffling runs.",
     freecell: "Count empty buffers before you move a long stack. Freeing an ace early is usually correct.",
     pyramid: "Do not pair two cards you will need to free a buried king unless you can see the win.",
+    tripeaks: "Clear a peak before you burn stock if you can — each freed peak opens easier chains. Aces wrap with kings.",
+    golf: "Play from columns that free buried cards first. Stock flips are limited, so do not waste them on dead ends.",
     mahjong: "Never spend the last copy of a tile you have not located. Scan the top layer first.",
     sudoku: "Pencil in box candidates. If a number exists in two rows of a box, it is not in the third.",
     mines: "Chord on a satisfied number by clicking it when its flags are placed — here, open neighbors with a quick second click on the number.",
@@ -144,12 +180,12 @@ function page({ title, desc, canonical, extraHead, body, rootRel, bodyClass }) {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="${rootRel}/css/site.css?v=31" />
-  <link rel="stylesheet" href="${rootRel}/css/games.css?v=29" />
+  <link rel="stylesheet" href="${rootRel}/css/site.css?v=33" />
+  <link rel="stylesheet" href="${rootRel}/css/games.css?v=30" />
   ${extraHead || ""}
 </head>
 <body data-root="${rootRel}" class="${esc(bodyClass || "")}">
-  <script src="${rootRel}/js/chrome.js"></script>
+  <script src="${rootRel}/js/chrome.js?v=3"></script>
   <script src="${rootRel}/js/catalog.js"></script>
   <div id="site-header"></div>
   ${body}
@@ -159,18 +195,31 @@ function page({ title, desc, canonical, extraHead, body, rootRel, bodyClass }) {
 }
 
 function gameJsonLd(g, url) {
-  return `<script type="application/ld+json">${JSON.stringify({
+  const blocks = [{
     "@context": "https://schema.org",
     "@type": "VideoGame",
     name: g.title,
-    description: g.short,
+    description: pageDesc(g),
     url,
     genre: g.category,
     playMode: "SinglePlayer",
     applicationCategory: "GameApplication",
     operatingSystem: "Any",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }
-  })}</script>`;
+  }];
+  const faq = GAME_CONTENT[g.id]?.faq;
+  if (faq && faq.length) {
+    blocks.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a }
+      }))
+    });
+  }
+  return blocks.map((b) => `<script type="application/ld+json">${JSON.stringify(b)}</script>`).join("\n  ");
 }
 
 function write(file, text) {
@@ -323,11 +372,11 @@ for (const cat of CATEGORIES) {
 
 for (const g of GAMES) {
   const url = `${origin}/games/${g.id}/`;
-  const related = GAMES.filter((x) => x.category === g.category && x.id !== g.id).slice(0, 6);
+  const related = relatedFor(g);
   const catTitle = CATEGORIES.find((c) => c.id === g.category)?.title || g.category;
   write(out("games", g.id, "index.html"), page({
     title: `Play ${g.title} Free Online | ${SITE.name}`,
-    desc: `${g.short} Play ${g.title} in your browser — no download.`,
+    desc: pageDesc(g),
     canonical: url,
     extraHead: gameJsonLd(g, url),
     body: `<main class="game-page">
@@ -356,7 +405,7 @@ for (const g of GAMES) {
         </div>
       </div>
     </main>
-    ${g.engine === "solitaire" || g.engine === "ginrummy" ? `<script src="../../js/deck.js?v=5"></script>\n    ` : ""}<script src="../../engines/${g.engine}.js?v=10"></script>
+    ${g.engine === "solitaire" || g.engine === "ginrummy" ? `<script src="../../js/deck.js?v=5"></script>\n    ` : ""}<script src="../../engines/${g.engine}.js?v=12"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const board = document.getElementById("board");

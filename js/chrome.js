@@ -129,24 +129,21 @@ window.BA.todaySeed = function () {
 /** Short felt-table toast for illegal moves / soft warnings. */
 window.BA.toast = function (msg) {
   if (!msg) return;
-  const host =
-    document.querySelector(".play-table") ||
-    document.querySelector(".board-frame") ||
-    document.body;
-  let el = host.querySelector(":scope > .ba-toast");
+  let el = document.getElementById("ba-toast");
   if (!el) {
     el = document.createElement("div");
+    el.id = "ba-toast";
     el.className = "ba-toast";
     el.setAttribute("role", "status");
     el.setAttribute("aria-live", "polite");
-    host.appendChild(el);
+    document.body.appendChild(el);
   }
   el.textContent = msg;
   el.classList.remove("show");
   void el.offsetWidth;
   el.classList.add("show");
   clearTimeout(window.BA._toastT);
-  window.BA._toastT = setTimeout(() => el.classList.remove("show"), 1800);
+  window.BA._toastT = setTimeout(() => el.classList.remove("show"), 2200);
 };
 
 document.addEventListener("DOMContentLoaded", () => window.BA.mountChrome());

@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Play Reversi Free Online | SolitaireFelt</title>
-  <meta name="description" content="Flip the board. Classic Othello-style reversi. Play Reversi in your browser — no download." />
+  <meta name="description" content="Reversi (Othello) online — trap discs to flip them. Most discs at the end wins. Free vs computer." />
   <link rel="canonical" href="https://solitairefelt.com/games/reversi/" />
   <meta property="og:title" content="Play Reversi Free Online | SolitaireFelt" />
-  <meta property="og:description" content="Flip the board. Classic Othello-style reversi. Play Reversi in your browser — no download." />
+  <meta property="og:description" content="Reversi (Othello) online — trap discs to flip them. Most discs at the end wins. Free vs computer." />
   <meta property="og:site_name" content="SolitaireFelt" />
   <meta property="og:url" content="https://solitairefelt.com/games/reversi/" />
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
@@ -15,12 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../css/site.css?v=31" />
-  <link rel="stylesheet" href="../../css/games.css?v=29" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Reversi","description":"Flip the board. Classic Othello-style reversi.","url":"https://solitairefelt.com/games/reversi/","genre":"board","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <link rel="stylesheet" href="../../css/site.css?v=33" />
+  <link rel="stylesheet" href="../../css/games.css?v=30" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Reversi","description":"Reversi (Othello) online — trap discs to flip them. Most discs at the end wins. Free vs computer.","url":"https://solitairefelt.com/games/reversi/","genre":"board","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Reversi the same as Othello?","acceptedAnswer":{"@type":"Answer","text":"Same rules and starting setup in practice. Othello is the trademarked board brand name."}}]}</script>
 </head>
 <body data-root="../.." class="play-page">
-  <script src="../../js/chrome.js"></script>
+  <script src="../../js/chrome.js?v=3"></script>
   <script src="../../js/catalog.js"></script>
   <div id="site-header"></div>
   <main class="game-page">
@@ -43,14 +44,15 @@
       </section>
       <div class="play-copy">
         <div class="wrap">
-          <article class="prose">
-<p>Reversi is a free browser game on SolitaireFelt, built for a short break that can stretch into a long session. There is no download, no sign-in, and no backend: the puzzle runs in this tab and your best results stay in local storage on your device. That keeps the page fast, private, and easy for Google to crawl as a real game page rather than an empty iframe.</p>
-<p>Flip the board. Classic Othello-style reversi. It sits in our Board Games collection because people already search for this mechanic by name. The rules below match the familiar version of the game, with original board art and a full felt table for play.</p>
-<h2>How to play Reversi</h2>
-<p>Place a disc so it traps opponent discs in a straight line, then flip them. The player with more discs at the end wins.</p>
-<h2>Tips</h2>
-<p>Play a first round just to learn the buttons, then chase a cleaner score. Daily modes reward coming back tomorrow more than grinding one lucky shuffle.</p>
-<p>If you enjoy Reversi, open the related games under this page. A full niche catalog — solitaire variants, mahjong layouts, daily sudoku, word puzzles, and board games versus a computer — is what makes SolitaireFelt worth bookmarking instead of a three-page demo.</p></article>
+          <article class="prose"><p>Reversi starts with four discs in the center. Place a disc so it traps opponent pieces between your new disc and another of yours in a straight line; trapped discs flip to your color.</p>
+<p>The game ends when neither player can move; whoever has more discs wins.</p><h2>How to play Reversi</h2>
+<ul><li>Black and white alternate. You must play if a legal flip exists.</li><li>A legal move traps at least one opponent disc between your new disc and an existing disc, horizontally, vertically, or diagonally.</li><li>All trapped discs flip to your color.</li><li>If you cannot move, your turn passes. Game ends when both pass or the board fills.</li></ul>
+<h2>Strategy tips</h2>
+<ul><li>Corners never flip — a corner disc is permanent once taken.</li><li>Avoid playing adjacent to corners early unless you can take the corner next turn.</li><li>Edges are safer than interior cells but still vulnerable to long lines.</li><li>Minimize discs in the opening; fewer discs often means more mobility midgame.</li><li>Force your opponent into a move that gives you a corner — that swing wins many casual games.</li></ul>
+<h2>Common questions</h2>
+<h3>Is Reversi the same as Othello?</h3>
+<p>Same rules and starting setup in practice. Othello is the trademarked board brand name.</p>
+</article>
           <div class="section-head"><h2>Related</h2></div>
           <div class="related"><a class="card" href="../../games/chess/index.html" data-category="board" data-title="Chess">
     <div class="card-cover">
@@ -73,20 +75,6 @@
       <div class="card-play"><span>Play</span></div>
       <span class="card-body"><h3>Connect Four</h3></span>
     </div>
-  </a><a class="card" href="../../games/mancala/index.html" data-category="board" data-title="Mancala">
-    <div class="card-cover">
-      <img src="../../thumbs/mancala.svg?v=8" alt="Mancala" width="360" height="450" />
-      
-      <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Mancala</h3></span>
-    </div>
-  </a><a class="card" href="../../games/battleship/index.html" data-category="board" data-title="Sea Battle">
-    <div class="card-cover">
-      <img src="../../thumbs/battleship.svg?v=8" alt="Sea Battle" width="360" height="450" />
-      
-      <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Sea Battle</h3></span>
-    </div>
   </a><a class="card" href="../../games/gomoku/index.html" data-category="board" data-title="Gomoku">
     <div class="card-cover">
       <img src="../../thumbs/gomoku.svg?v=8" alt="Gomoku" width="360" height="450" />
@@ -94,11 +82,25 @@
       <div class="card-play"><span>Play</span></div>
       <span class="card-body"><h3>Gomoku</h3></span>
     </div>
+  </a><a class="card" href="../../games/mancala/index.html" data-category="board" data-title="Mancala">
+    <div class="card-cover">
+      <img src="../../thumbs/mancala.svg?v=8" alt="Mancala" width="360" height="450" />
+      
+      <div class="card-play"><span>Play</span></div>
+      <span class="card-body"><h3>Mancala</h3></span>
+    </div>
+  </a><a class="card" href="../../games/tic-tac-toe/index.html" data-category="board" data-title="Tic-Tac-Toe">
+    <div class="card-cover">
+      <img src="../../thumbs/tic-tac-toe.svg?v=8" alt="Tic-Tac-Toe" width="360" height="450" />
+      
+      <div class="card-play"><span>Play</span></div>
+      <span class="card-body"><h3>Tic-Tac-Toe</h3></span>
+    </div>
   </a></div>
         </div>
       </div>
     </main>
-    <script src="../../engines/reversi.js?v=10"></script>
+    <script src="../../engines/reversi.js?v=12"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const board = document.getElementById("board");

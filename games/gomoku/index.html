@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Play Gomoku Free Online | SolitaireFelt</title>
-  <meta name="description" content="Five in a row on a 15×15 grid versus AI. Play Gomoku in your browser — no download." />
+  <meta name="description" content="Gomoku online — five in a row on a 15×15 board vs AI. Free browser strategy game." />
   <link rel="canonical" href="https://solitairefelt.com/games/gomoku/" />
   <meta property="og:title" content="Play Gomoku Free Online | SolitaireFelt" />
-  <meta property="og:description" content="Five in a row on a 15×15 grid versus AI. Play Gomoku in your browser — no download." />
+  <meta property="og:description" content="Gomoku online — five in a row on a 15×15 board vs AI. Free browser strategy game." />
   <meta property="og:site_name" content="SolitaireFelt" />
   <meta property="og:url" content="https://solitairefelt.com/games/gomoku/" />
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
@@ -15,12 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../css/site.css?v=31" />
-  <link rel="stylesheet" href="../../css/games.css?v=29" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Gomoku","description":"Five in a row on a 15×15 grid versus AI.","url":"https://solitairefelt.com/games/gomoku/","genre":"board","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <link rel="stylesheet" href="../../css/site.css?v=33" />
+  <link rel="stylesheet" href="../../css/games.css?v=30" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Gomoku","description":"Gomoku online — five in a row on a 15×15 board vs AI. Free browser strategy game.","url":"https://solitairefelt.com/games/gomoku/","genre":"board","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this renju or free gomoku?","acceptedAnswer":{"@type":"Answer","text":"Free gomoku rules — first five in a row wins, without renju opening restrictions."}}]}</script>
 </head>
 <body data-root="../.." class="play-page">
-  <script src="../../js/chrome.js"></script>
+  <script src="../../js/chrome.js?v=3"></script>
   <script src="../../js/catalog.js"></script>
   <div id="site-header"></div>
   <main class="game-page">
@@ -43,16 +44,38 @@
       </section>
       <div class="play-copy">
         <div class="wrap">
-          <article class="prose">
-<p>Gomoku is a free browser game on SolitaireFelt, built for a short break that can stretch into a long session. There is no download, no sign-in, and no backend: the puzzle runs in this tab and your best results stay in local storage on your device. That keeps the page fast, private, and easy for Google to crawl as a real game page rather than an empty iframe.</p>
-<p>Five in a row on a 15×15 grid versus AI. It sits in our Board Games collection because people already search for this mechanic by name. The rules below match the familiar version of the game, with original board art and a full felt table for play.</p>
-<h2>How to play Gomoku</h2>
-<p>Place stones on intersections. Five in a row, any direction, wins. The CPU plays a heuristic mix of attack and block.</p>
-<h2>Tips</h2>
-<p>Play a first round just to learn the buttons, then chase a cleaner score. Daily modes reward coming back tomorrow more than grinding one lucky shuffle.</p>
-<p>If you enjoy Gomoku, open the related games under this page. A full niche catalog — solitaire variants, mahjong layouts, daily sudoku, word puzzles, and board games versus a computer — is what makes SolitaireFelt worth bookmarking instead of a three-page demo.</p></article>
+          <article class="prose"><p>Gomoku (five in a row) on a fifteen-by-fifteen grid. You and the computer alternate placing stones on intersections. First uninterrupted line of five wins — horizontal, vertical, or diagonal.</p>
+<p>Open threes and fours are lethal; the AI blocks obvious wins but can be outflanked with double threats.</p><h2>How to play Gomoku</h2>
+<ul><li>Click an empty intersection to place your stone.</li><li>Players alternate.</li><li>Five stones in a row in any straight direction wins.</li><li>No capture — placement only.</li></ul>
+<h2>Strategy tips</h2>
+<ul><li>Play near the center early — lines need room to grow in four directions.</li><li>Create two open-ended threats so the opponent can block only one.</li><li>Block an opponent four immediately; a three can become two winning fours next turn.</li><li>Watch diagonals — they are the most commonly overlooked winning lines.</li><li>If the board feels crowded, reset — gomoku on 15×15 still has air until midgame.</li></ul>
+<h2>Common questions</h2>
+<h3>Is this renju or free gomoku?</h3>
+<p>Free gomoku rules — first five in a row wins, without renju opening restrictions.</p>
+</article>
           <div class="section-head"><h2>Related</h2></div>
-          <div class="related"><a class="card" href="../../games/chess/index.html" data-category="board" data-title="Chess">
+          <div class="related"><a class="card" href="../../games/connect-four/index.html" data-category="board" data-title="Connect Four">
+    <div class="card-cover">
+      <img src="../../thumbs/connect-four.svg?v=8" alt="Connect Four" width="360" height="450" />
+      
+      <div class="card-play"><span>Play</span></div>
+      <span class="card-body"><h3>Connect Four</h3></span>
+    </div>
+  </a><a class="card" href="../../games/tic-tac-toe/index.html" data-category="board" data-title="Tic-Tac-Toe">
+    <div class="card-cover">
+      <img src="../../thumbs/tic-tac-toe.svg?v=8" alt="Tic-Tac-Toe" width="360" height="450" />
+      
+      <div class="card-play"><span>Play</span></div>
+      <span class="card-body"><h3>Tic-Tac-Toe</h3></span>
+    </div>
+  </a><a class="card" href="../../games/reversi/index.html" data-category="board" data-title="Reversi">
+    <div class="card-cover">
+      <img src="../../thumbs/reversi.svg?v=8" alt="Reversi" width="360" height="450" />
+      
+      <div class="card-play"><span>Play</span></div>
+      <span class="card-body"><h3>Reversi</h3></span>
+    </div>
+  </a><a class="card" href="../../games/chess/index.html" data-category="board" data-title="Chess">
     <div class="card-cover">
       <img src="../../thumbs/chess.svg?v=8" alt="Chess" width="360" height="450" />
       
@@ -66,20 +89,6 @@
       <div class="card-play"><span>Play</span></div>
       <span class="card-body"><h3>Checkers</h3></span>
     </div>
-  </a><a class="card" href="../../games/connect-four/index.html" data-category="board" data-title="Connect Four">
-    <div class="card-cover">
-      <img src="../../thumbs/connect-four.svg?v=8" alt="Connect Four" width="360" height="450" />
-      
-      <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Connect Four</h3></span>
-    </div>
-  </a><a class="card" href="../../games/reversi/index.html" data-category="board" data-title="Reversi">
-    <div class="card-cover">
-      <img src="../../thumbs/reversi.svg?v=8" alt="Reversi" width="360" height="450" />
-      
-      <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Reversi</h3></span>
-    </div>
   </a><a class="card" href="../../games/mancala/index.html" data-category="board" data-title="Mancala">
     <div class="card-cover">
       <img src="../../thumbs/mancala.svg?v=8" alt="Mancala" width="360" height="450" />
@@ -87,18 +96,11 @@
       <div class="card-play"><span>Play</span></div>
       <span class="card-body"><h3>Mancala</h3></span>
     </div>
-  </a><a class="card" href="../../games/battleship/index.html" data-category="board" data-title="Sea Battle">
-    <div class="card-cover">
-      <img src="../../thumbs/battleship.svg?v=8" alt="Sea Battle" width="360" height="450" />
-      
-      <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Sea Battle</h3></span>
-    </div>
   </a></div>
         </div>
       </div>
     </main>
-    <script src="../../engines/gomoku.js?v=10"></script>
+    <script src="../../engines/gomoku.js?v=12"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const board = document.getElementById("board");

@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Play Sudoku Hard Free Online | SolitaireFelt</title>
-  <meta name="description" content="Sparse givens. Naked pairs and pointing pairs help. Play Sudoku Hard in your browser — no download." />
+  <meta name="description" content="Hard 9×9 Sudoku with sparse givens — for players comfortable with pairs and box-line logic. Free online." />
   <link rel="canonical" href="https://solitairefelt.com/games/sudoku-hard/" />
   <meta property="og:title" content="Play Sudoku Hard Free Online | SolitaireFelt" />
-  <meta property="og:description" content="Sparse givens. Naked pairs and pointing pairs help. Play Sudoku Hard in your browser — no download." />
+  <meta property="og:description" content="Hard 9×9 Sudoku with sparse givens — for players comfortable with pairs and box-line logic. Free online." />
   <meta property="og:site_name" content="SolitaireFelt" />
   <meta property="og:url" content="https://solitairefelt.com/games/sudoku-hard/" />
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
@@ -15,12 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../css/site.css?v=31" />
-  <link rel="stylesheet" href="../../css/games.css?v=29" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Sudoku Hard","description":"Sparse givens. Naked pairs and pointing pairs help.","url":"https://solitairefelt.com/games/sudoku-hard/","genre":"sudoku","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <link rel="stylesheet" href="../../css/site.css?v=33" />
+  <link rel="stylesheet" href="../../css/games.css?v=30" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Sudoku Hard","description":"Hard 9×9 Sudoku with sparse givens — for players comfortable with pairs and box-line logic. Free online.","url":"https://solitairefelt.com/games/sudoku-hard/","genre":"sudoku","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need advanced sudoku notation for hard?","acceptedAnswer":{"@type":"Answer","text":"Not on paper, but thinking in candidates helps. The techniques named above are enough for our hard puzzles without X-Wings or coloring."}}]}</script>
 </head>
 <body data-root="../.." class="play-page">
-  <script src="../../js/chrome.js"></script>
+  <script src="../../js/chrome.js?v=3"></script>
   <script src="../../js/catalog.js"></script>
   <div id="site-header"></div>
   <main class="game-page">
@@ -43,28 +44,36 @@
       </section>
       <div class="play-copy">
         <div class="wrap">
-          <article class="prose">
-<p>Sudoku Hard is a free browser game on SolitaireFelt, built for a short break that can stretch into a long session. There is no download, no sign-in, and no backend: the puzzle runs in this tab and your best results stay in local storage on your device. That keeps the page fast, private, and easy for Google to crawl as a real game page rather than an empty iframe.</p>
-<p>Sparse givens. Naked pairs and pointing pairs help. It sits in our Sudoku & Numbers collection because people already search for this mechanic by name. The rules below match the familiar version of the game, with original board art and a full felt table for play.</p>
-<h2>How to play Sudoku Hard</h2>
-<p>Fill 1–9 so each row, column, and 3×3 box is unique. Given gold digits cannot be changed. Daily Sudoku uses today's date as the shuffle seed so everyone sharing the calendar day gets the same grid.</p>
-<h2>Tips</h2>
-<p>Pencil in box candidates. If a number exists in two rows of a box, it is not in the third.</p>
-<p>If you enjoy Sudoku Hard, open the related games under this page. A full niche catalog — solitaire variants, mahjong layouts, daily sudoku, word puzzles, and board games versus a computer — is what makes SolitaireFelt worth bookmarking instead of a three-page demo.</p></article>
+          <article class="prose"><p>Hard sudoku starts with the fewest givens in our 9×9 set. Early moves are not obvious singles — you will use elimination patterns like naked pairs and pointing pairs.</p>
+<p>Still no guessing: if you feel forced to gamble, re-scan for a constraint you missed.</p><h2>How to play Sudoku Hard</h2>
+<ul><li>Standard 9×9 sudoku: unique digits in every row, column, and 3×3 box.</li><li>Givens are minimal — expect to reason about multiple candidates per cell.</li><li>Use New game for another puzzle; best time is stored locally on this device.</li></ul>
+<h2>Strategy tips</h2>
+<ul><li>Pointing pairs: if a digit’s candidates in a box all lie in one row, eliminate that digit from the rest of that row outside the box.</li><li>Naked triples: three cells in a unit sharing three digits among them lock those digits out of other cells in the unit.</li><li>Avoid filling a cell until only one candidate remains unless you are sure — a wrong digit cascades fast on hard grids.</li><li>Crosshatch: pick a digit and scan which rows and columns already contain it to see where it must go in a box.</li><li>Step down to medium if a puzzle stalls you for ten minutes — building technique beats brute force.</li></ul>
+<h2>Common questions</h2>
+<h3>Do I need advanced sudoku notation for hard?</h3>
+<p>Not on paper, but thinking in candidates helps. The techniques named above are enough for our hard puzzles without X-Wings or coloring.</p>
+</article>
           <div class="section-head"><h2>Related</h2></div>
-          <div class="related"><a class="card" href="../../games/sudoku-easy/index.html" data-category="sudoku" data-title="Sudoku Easy">
+          <div class="related"><a class="card" href="../../games/sudoku-medium/index.html" data-category="sudoku" data-title="Sudoku Medium">
+    <div class="card-cover">
+      <img src="../../thumbs/sudoku-medium.svg?v=8" alt="Sudoku Medium" width="360" height="450" />
+      
+      <div class="card-play"><span>Play</span></div>
+      <span class="card-body"><h3>Sudoku Medium</h3></span>
+    </div>
+  </a><a class="card" href="../../games/sudoku-easy/index.html" data-category="sudoku" data-title="Sudoku Easy">
     <div class="card-cover">
       <img src="../../thumbs/sudoku-easy.svg?v=8" alt="Sudoku Easy" width="360" height="450" />
       
       <div class="card-play"><span>Play</span></div>
       <span class="card-body"><h3>Sudoku Easy</h3></span>
     </div>
-  </a><a class="card" href="../../games/sudoku-medium/index.html" data-category="sudoku" data-title="Sudoku Medium">
+  </a><a class="card" href="../../games/killer-sudoku/index.html" data-category="sudoku" data-title="Killer Sudoku">
     <div class="card-cover">
-      <img src="../../thumbs/sudoku-medium.svg?v=8" alt="Sudoku Medium" width="360" height="450" />
+      <img src="../../thumbs/killer-sudoku.svg?v=8" alt="Killer Sudoku" width="360" height="450" />
       
       <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Sudoku Medium</h3></span>
+      <span class="card-body"><h3>Killer Sudoku</h3></span>
     </div>
   </a><a class="card" href="../../games/daily-sudoku/index.html" data-category="sudoku" data-title="Daily Sudoku">
     <div class="card-cover">
@@ -73,32 +82,25 @@
       <div class="card-play"><span>Play</span></div>
       <span class="card-body"><h3>Daily Sudoku</h3></span>
     </div>
-  </a><a class="card" href="../../games/mini-sudoku/index.html" data-category="sudoku" data-title="Mini Sudoku 6×6">
+  </a><a class="card" href="../../games/kakuro/index.html" data-category="sudoku" data-title="Kakuro">
     <div class="card-cover">
-      <img src="../../thumbs/mini-sudoku.svg?v=8" alt="Mini Sudoku 6×6" width="360" height="450" />
+      <img src="../../thumbs/kakuro.svg?v=8" alt="Kakuro" width="360" height="450" />
       
       <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Mini Sudoku 6×6</h3></span>
+      <span class="card-body"><h3>Kakuro</h3></span>
     </div>
-  </a><a class="card" href="../../games/minesweeper/index.html" data-category="sudoku" data-title="Minesweeper Beginner">
+  </a><a class="card" href="../../games/daily-killer-sudoku/index.html" data-category="sudoku" data-title="Daily Killer Sudoku">
     <div class="card-cover">
-      <img src="../../thumbs/minesweeper.svg?v=8" alt="Minesweeper Beginner" width="360" height="450" />
+      <img src="../../thumbs/daily-killer-sudoku.svg?v=8" alt="Daily Killer Sudoku" width="360" height="450" />
       
       <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Minesweeper Beginner</h3></span>
-    </div>
-  </a><a class="card" href="../../games/minesweeper-intermediate/index.html" data-category="sudoku" data-title="Minesweeper Intermediate">
-    <div class="card-cover">
-      <img src="../../thumbs/minesweeper-intermediate.svg?v=8" alt="Minesweeper Intermediate" width="360" height="450" />
-      
-      <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Minesweeper Intermediate</h3></span>
+      <span class="card-body"><h3>Daily Killer Sudoku</h3></span>
     </div>
   </a></div>
         </div>
       </div>
     </main>
-    <script src="../../engines/sudoku.js?v=10"></script>
+    <script src="../../engines/sudoku.js?v=12"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const board = document.getElementById("board");

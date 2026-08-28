@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Play Sudoku Medium Free Online | SolitaireFelt</title>
-  <meta name="description" content="A balanced 9×9 that needs pencil-mark thinking. Play Sudoku Medium in your browser — no download." />
+  <meta name="description" content="Medium 9×9 Sudoku online — fewer givens than easy, more logic than guessing. Free in your browser." />
   <link rel="canonical" href="https://solitairefelt.com/games/sudoku-medium/" />
   <meta property="og:title" content="Play Sudoku Medium Free Online | SolitaireFelt" />
-  <meta property="og:description" content="A balanced 9×9 that needs pencil-mark thinking. Play Sudoku Medium in your browser — no download." />
+  <meta property="og:description" content="Medium 9×9 Sudoku online — fewer givens than easy, more logic than guessing. Free in your browser." />
   <meta property="og:site_name" content="SolitaireFelt" />
   <meta property="og:url" content="https://solitairefelt.com/games/sudoku-medium/" />
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
@@ -15,12 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../css/site.css?v=31" />
-  <link rel="stylesheet" href="../../css/games.css?v=29" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Sudoku Medium","description":"A balanced 9×9 that needs pencil-mark thinking.","url":"https://solitairefelt.com/games/sudoku-medium/","genre":"sudoku","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <link rel="stylesheet" href="../../css/site.css?v=33" />
+  <link rel="stylesheet" href="../../css/games.css?v=30" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Sudoku Medium","description":"Medium 9×9 Sudoku online — fewer givens than easy, more logic than guessing. Free in your browser.","url":"https://solitairefelt.com/games/sudoku-medium/","genre":"sudoku","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is medium different from easy on SolitaireFelt?","acceptedAnswer":{"@type":"Answer","text":"We remove more givens on medium (46 empty cells versus 36 on easy). The rules are identical; difficulty comes from clue sparsity."}}]}</script>
 </head>
 <body data-root="../.." class="play-page">
-  <script src="../../js/chrome.js"></script>
+  <script src="../../js/chrome.js?v=3"></script>
   <script src="../../js/catalog.js"></script>
   <div id="site-header"></div>
   <main class="game-page">
@@ -43,14 +44,15 @@
       </section>
       <div class="play-copy">
         <div class="wrap">
-          <article class="prose">
-<p>Sudoku Medium is a free browser game on SolitaireFelt, built for a short break that can stretch into a long session. There is no download, no sign-in, and no backend: the puzzle runs in this tab and your best results stay in local storage on your device. That keeps the page fast, private, and easy for Google to crawl as a real game page rather than an empty iframe.</p>
-<p>A balanced 9×9 that needs pencil-mark thinking. It sits in our Sudoku & Numbers collection because people already search for this mechanic by name. The rules below match the familiar version of the game, with original board art and a full felt table for play.</p>
-<h2>How to play Sudoku Medium</h2>
-<p>Fill 1–9 so each row, column, and 3×3 box is unique. Given gold digits cannot be changed. Daily Sudoku uses today's date as the shuffle seed so everyone sharing the calendar day gets the same grid.</p>
-<h2>Tips</h2>
-<p>Pencil in box candidates. If a number exists in two rows of a box, it is not in the third.</p>
-<p>If you enjoy Sudoku Medium, open the related games under this page. A full niche catalog — solitaire variants, mahjong layouts, daily sudoku, word puzzles, and board games versus a computer — is what makes SolitaireFelt worth bookmarking instead of a three-page demo.</p></article>
+          <article class="prose"><p>Medium sudoku removes more starting digits than our easy board, so singles appear less often and you will need candidate tracking in harder boxes.</p>
+<p>The grid is still a standard 9×9 with nine 3×3 boxes — only the clue density changes.</p><h2>How to play Sudoku Medium</h2>
+<ul><li>Place digits 1–9 so each row, column, and 3×3 box contains every digit exactly once.</li><li>Given digits cannot be changed.</li><li>New game generates a fresh puzzle. No guessing should be required on a well-formed medium grid — look for the next logical elimination.</li></ul>
+<h2>Strategy tips</h2>
+<ul><li>Mark mentally which digits are still possible in each empty cell within its row, column, and box.</li><li>Hidden singles: if a digit can only sit in one cell inside a row (or column or box), fill it even if the cell has other candidates.</li><li>Naked pairs: two cells in a unit sharing exactly the same two candidates eliminate those digits from other cells in that unit.</li><li>When stuck, pick the box with the fewest empty cells — constrained boxes break open faster.</li><li>If easy sudoku feels slow, medium is the step where technique starts to matter more than scanning.</li></ul>
+<h2>Common questions</h2>
+<h3>How is medium different from easy on SolitaireFelt?</h3>
+<p>We remove more givens on medium (46 empty cells versus 36 on easy). The rules are identical; difficulty comes from clue sparsity.</p>
+</article>
           <div class="section-head"><h2>Related</h2></div>
           <div class="related"><a class="card" href="../../games/sudoku-easy/index.html" data-category="sudoku" data-title="Sudoku Easy">
     <div class="card-cover">
@@ -73,6 +75,13 @@
       <div class="card-play"><span>Play</span></div>
       <span class="card-body"><h3>Daily Sudoku</h3></span>
     </div>
+  </a><a class="card" href="../../games/killer-sudoku/index.html" data-category="sudoku" data-title="Killer Sudoku">
+    <div class="card-cover">
+      <img src="../../thumbs/killer-sudoku.svg?v=8" alt="Killer Sudoku" width="360" height="450" />
+      
+      <div class="card-play"><span>Play</span></div>
+      <span class="card-body"><h3>Killer Sudoku</h3></span>
+    </div>
   </a><a class="card" href="../../games/mini-sudoku/index.html" data-category="sudoku" data-title="Mini Sudoku 6×6">
     <div class="card-cover">
       <img src="../../thumbs/mini-sudoku.svg?v=8" alt="Mini Sudoku 6×6" width="360" height="450" />
@@ -80,25 +89,18 @@
       <div class="card-play"><span>Play</span></div>
       <span class="card-body"><h3>Mini Sudoku 6×6</h3></span>
     </div>
-  </a><a class="card" href="../../games/minesweeper/index.html" data-category="sudoku" data-title="Minesweeper Beginner">
+  </a><a class="card" href="../../games/kakuro/index.html" data-category="sudoku" data-title="Kakuro">
     <div class="card-cover">
-      <img src="../../thumbs/minesweeper.svg?v=8" alt="Minesweeper Beginner" width="360" height="450" />
+      <img src="../../thumbs/kakuro.svg?v=8" alt="Kakuro" width="360" height="450" />
       
       <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Minesweeper Beginner</h3></span>
-    </div>
-  </a><a class="card" href="../../games/minesweeper-intermediate/index.html" data-category="sudoku" data-title="Minesweeper Intermediate">
-    <div class="card-cover">
-      <img src="../../thumbs/minesweeper-intermediate.svg?v=8" alt="Minesweeper Intermediate" width="360" height="450" />
-      
-      <div class="card-play"><span>Play</span></div>
-      <span class="card-body"><h3>Minesweeper Intermediate</h3></span>
+      <span class="card-body"><h3>Kakuro</h3></span>
     </div>
   </a></div>
         </div>
       </div>
     </main>
-    <script src="../../engines/sudoku.js?v=10"></script>
+    <script src="../../engines/sudoku.js?v=12"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const board = document.getElementById("board");

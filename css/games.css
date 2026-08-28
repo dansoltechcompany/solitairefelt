@@ -3,7 +3,9 @@
   --card-h: 118px;
   --card-peek: 28px;
   position: relative;
-  min-height: 560px;
+  min-height: 0;
+  width: min(100%, var(--table-w, 100%));
+  margin: 0 auto;
 }
 .playing-card {
   width: var(--card-w, 84px);
@@ -49,9 +51,13 @@
 .pile-found:has(.playing-card)::before { display: none; }
 .solitaire-top, .solitaire-row {
   display: flex;
-  gap: 10px;
-  margin-bottom: 18px;
-  flex-wrap: wrap;
+  gap: var(--card-gap, 10px);
+  margin-bottom: 12px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.solitaire-top {
+  margin-bottom: 14px;
 }
 @media (max-width: 900px) {
   .solitaire {
