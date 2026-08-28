@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../css/site.css?v=33" />
   <link rel="stylesheet" href="../../css/games.css?v=30" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Connect Four","description":"Connect Four online — drop discs, four in a row wins. Play against the computer. Free browser game.","url":"https://solitairefelt.com/games/connect-four/","genre":"board","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the computer play optimally?","acceptedAnswer":{"@type":"Answer","text":"It uses heuristic attack and block logic — strong on obvious fours, not perfect endgame proof."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the computer play optimally?","acceptedAnswer":{"@type":"Answer","text":"It picks a random legal column — good for casual play, not perfect endgame defense."}}]}</script>
 </head>
 <body data-root="../.." class="play-page">
   <script src="../../js/chrome.js?v=3"></script>
@@ -44,14 +44,14 @@
       </section>
       <div class="play-copy">
         <div class="wrap">
-          <article class="prose"><p>Drop red or yellow discs into a seven-column, six-row grid. Gravity fills the lowest empty slot in a column. First to connect four horizontally, vertically, or diagonally wins.</p>
-<p>The CPU plays red; you play yellow (or as configured). Think one row above your win — block before you build.</p><h2>How to play Connect Four</h2>
+          <article class="prose"><p>Drop discs into a seven-column, six-row grid. Gravity fills the lowest empty slot in a column. First to connect four horizontally, vertically, or diagonally wins.</p>
+<p>You play against the computer. Think one row above your win — block before you build.</p><h2>How to play Connect Four</h2>
 <ul><li>Click a column to drop your disc in the lowest empty cell.</li><li>Players alternate turns.</li><li>Four in a row in any direction wins.</li><li>Full columns reject new discs — pick another column.</li></ul>
 <h2>Strategy tips</h2>
-<ul><li>Control the center columns — they participate in more winning lines.</li><li>Create two threats at once (forks) so the CPU cannot block both.</li><li>Block an opponent three-in-a-row immediately — the fourth is often unstoppable above.</li><li>Watch diagonal lines through the middle; they are easier to miss than horizontals.</li><li>If the top row fills without a winner, the game is a draw — rare but possible.</li></ul>
+<ul><li>Control the center columns — they participate in more winning lines.</li><li>Create two threats at once (forks) when you can — the CPU picks randomly among legal columns, not perfect defense.</li><li>Block an opponent three-in-a-row immediately — the fourth is often unstoppable above.</li><li>Watch diagonal lines through the middle; they are easier to miss than horizontals.</li><li>If the top row fills without a winner, the game is a draw — rare but possible.</li></ul>
 <h2>Common questions</h2>
 <h3>Does the computer play optimally?</h3>
-<p>It uses heuristic attack and block logic — strong on obvious fours, not perfect endgame proof.</p>
+<p>It picks a random legal column — good for casual play, not perfect endgame defense.</p>
 </article>
           <div class="section-head"><h2>Related</h2></div>
           <div class="related"><a class="card" href="../../games/tic-tac-toe/index.html" data-category="board" data-title="Tic-Tac-Toe">

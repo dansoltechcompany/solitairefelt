@@ -43,7 +43,7 @@ export const GAME_CONTENT = {
       "Four-suit Spider is the hardest standard setting: all four suits are in play, so off-suit stacks are easy to build but hard to untangle. Most wins come from creating empty columns and reshuffling long runs into single-suit stacks."
     ],
     rules: [
-      "Layout: 54 cards are dealt across ten columns; the bottom ten cards are face up.",
+      "Layout: 54 cards are dealt across ten columns; the last card dealt to each column starts face up (one per column).",
       "Build tableau columns down by rank. Color and suit do not matter for placing a single card — only the rank must be exactly one lower.",
       "Moving stacks: you may only drag a run if every card in the run shares the same suit and ranks descend by one.",
       "Completing a full in-suit king-through-ace run removes it from the board and counts toward your win.",
@@ -218,13 +218,13 @@ export const GAME_CONTENT = {
   "mahjong-solitaire": {
     metaDesc: "Mahjong Solitaire turtle layout — match identical free tiles and clear the board. Classic pairs puzzle, free in your browser.",
     intro: [
-      "Mahjong solitaire is a tile-matching puzzle, not a four-player mahjong game. The classic turtle layout stacks 144 tiles in layers; you remove identical pairs when both tiles are “free.”",
+      "Mahjong solitaire is a tile-matching puzzle, not a four-player mahjong game. The classic turtle layout stacks tiles in overlapping layers; you remove identical pairs when both tiles are “free.”",
       "A tile is free when nothing sits on top of it and at least one long side (left or right) is open. Plan two or three matches ahead or you can lock yourself out of a pair."
     ],
     rules: [
       "Find two identical tiles that are both free and click them to remove the pair.",
       "Free means: no tile covering from above, and at least one horizontal edge open.",
-      "Season and flower tiles are special: any season matches any other season, and any flower matches any other flower.",
+      "Match identical tile faces only — both tiles must show the same symbol.",
       "You win when all tiles are cleared. You lose when no free pairs remain."
     ],
     tips: [
@@ -257,7 +257,7 @@ export const GAME_CONTENT = {
       "Fill every empty cell with a digit 1–9.",
       "No digit repeats in any row, column, or 3×3 box.",
       "Use logic only — a well-formed easy puzzle should not require guessing.",
-      "New game shuffles a fresh grid. Your best time stays on this device."
+      "New game shuffles a fresh grid anytime."
     ],
     tips: [
       "Start with boxes that already have six or seven givens — singles appear quickly there.",
@@ -379,7 +379,7 @@ export const GAME_CONTENT = {
     rules: [
       "Standard 9×9 sudoku: unique digits in every row, column, and 3×3 box.",
       "Givens are minimal — expect to reason about multiple candidates per cell.",
-      "Use New game for another puzzle; best time is stored locally on this device."
+      "Use New game for another puzzle anytime."
     ],
     tips: [
       "Pointing pairs: if a digit’s candidates in a box all lie in one row, eliminate that digit from the rest of that row outside the box.",
@@ -463,7 +463,7 @@ export const GAME_CONTENT = {
     ],
     rules: [
       "Left-click to open a cell. A number shows how many mines touch that cell (including diagonals).",
-      "Right-click (or long-press on touch) to flag a cell you believe contains a mine.",
+      "Right-click to flag a cell you believe contains a mine (use your browser’s context menu on touch devices).",
       "Open every non-mine cell to win. Hitting a mine ends the game.",
       "Empty cells (zero) auto-expand to reveal neighboring safe areas."
     ],
@@ -578,7 +578,6 @@ export const GAME_CONTENT = {
     ],
     tips: [
       "Start with two-cell cages: each sum has only a few possible pairs (e.g. 3 must be 1+2).",
-      "A cage of one cell (if present as sum equal to a single digit) is instant — rare but free.",
       "Use box rules to eliminate pair candidates that would break a row or column.",
       "Large cages with unique combinations (only one way to hit the sum with distinct digits) are anchor points.",
       "If stuck, scan for a cage where only one digit fits after sudoku eliminations — not just cage math."
@@ -678,12 +677,12 @@ export const GAME_CONTENT = {
     metaDesc: "Mahjong Fortress layout — tall walls, tight corners. Match free identical tiles. Free online.",
     intro: [
       "Fortress is a taller, wall-heavy mahjong layout. Tiles stack in high corners that lock the center — matches on the outer ramparts free more faces than tapping the middle early.",
-      "Matching rules are standard mahjong solitaire: pair identical free tiles; seasons and flowers match within their groups."
+      "Matching rules are standard mahjong solitaire: pair identical free tiles only."
     ],
     rules: [
       "Click two identical free tiles to remove them.",
       "Free: nothing on top, at least one long side open.",
-      "Seasons match any season; flowers match any flower.",
+      "Match identical tile faces only — both tiles must show the same symbol.",
       "Clear every tile to win."
     ],
     tips: [
@@ -711,7 +710,7 @@ export const GAME_CONTENT = {
     rules: [
       "Match identical free tiles to remove pairs.",
       "Tiles under others are blocked until covering tiles are cleared.",
-      "Season and flower groups match loosely within their type.",
+      "Match identical tile faces only — both tiles must show the same symbol.",
       "Win by clearing the board."
     ],
     tips: [
@@ -739,7 +738,7 @@ export const GAME_CONTENT = {
     rules: [
       "Standard mahjong solitaire matching on a two-plateau spider shape.",
       "Free tiles only; identical pairs remove.",
-      "Seasons and flowers follow the usual loose matching groups."
+      "Match identical tile faces only — both tiles must show the same symbol.",
     ],
     tips: [
       "Clear the center seam first — it usually blocks the most tiles on both plateaus.",
@@ -766,7 +765,7 @@ export const GAME_CONTENT = {
     rules: [
       "Match pairs of identical free mahjong tiles.",
       "Blocked tiles cannot be selected until coverings are removed.",
-      "Standard season and flower matching applies."
+      "Match identical tile faces only — both tiles must show the same symbol.",
     ],
     tips: [
       "Start at the dragon’s tail and head extremities — the center peak is the last boss.",
@@ -819,7 +818,7 @@ export const GAME_CONTENT = {
     ],
     rules: [
       "Mahjong solitaire pair rules on an aztec stepped pyramid.",
-      "Free tiles only; seasons and flowers match within type.",
+      "Match identical tile faces only — both tiles must show the same symbol.",
       "Remove all tiles to win."
     ],
     tips: [
@@ -925,20 +924,20 @@ export const GAME_CONTENT = {
   "canfield-solitaire": {
     metaDesc: "Canfield Solitaire — reserve pile, wrap-around foundations from a random base rank. Classic patience online, free.",
     intro: [
-      "Canfield is an old casino patience game: a thirteen-card reserve feeds the tableau, foundations start at a random rank and wrap (king to ace continues), and the stock deals three at a time.",
+      "Canfield is an old casino patience game: a thirteen-card reserve feeds the tableau, foundations start at a random rank and wrap (king to ace continues), and the stock flips one card at a time.",
       "It feels like Klondike with tighter constraints and a visible reserve you must manage before it empties."
     ],
     rules: [
       "Four tableau columns build down by alternating color.",
       "Reserve: thirteen face-up cards — only the top reserve card is playable.",
       "Foundations start from a random base rank (for example, if the base is 7♠, you build 7 through king then ace through 6 in that suit).",
-      "Stock flips three cards to waste; empty columns accept any card, not just kings.",
+      "Stock flips one card to waste; empty columns accept kings only.",
       "Win by moving all 52 cards to the foundations."
     ],
     tips: [
       "Watch the base rank immediately — every foundation starts there, not at ace.",
       "Reserve cards run out fast; use them to unblock tableau columns before the pile is empty.",
-      "Empty columns are flexible in Canfield — use them to reposition a blocking card, not only for kings.",
+      "Empty columns are for kings — use them to reposition a blocking king stack, not arbitrary cards.",
       "Do not bury the base rank in deep tableau stacks if you still need to start other suits.",
       "Wrapping foundations confuse newcomers: remember king is followed by ace on the same foundation pile."
     ],
@@ -965,7 +964,7 @@ export const GAME_CONTENT = {
       "Win by clearing four in-suit king-through-ace runs from the board, or by emptying all tableau columns."
     ],
     tips: [
-      "Same-rank builds are mandatory for in-suit runs — off-suit stacks are fine for scooping but runs clear only when suited king-to-ace.",
+      "Tableau builds down by rank (any suit); cleared runs must be in-suit king-through-ace.",
       "Use scoops to flip face-down cards at the bottom of a column.",
       "Empty columns let you break apart a bad stack and rebuild in-suit.",
       "Before dealing the final three cards, try to have columns where new cards can land on same-suit targets.",
@@ -990,14 +989,14 @@ export const GAME_CONTENT = {
       "Ten columns build down in the same suit only.",
       "Move only one card at a time — no packed multi-card moves.",
       "Eight foundations: two per suit, ace to king each.",
-      "Stock and waste follow the tableau deal; empty columns accept any card.",
+      "Stock deals one card to waste at a time; empty columns accept any card.",
       "Win when all 104 cards sit on foundations."
     ],
     tips: [
       "Do not bury low aces — with two foundations per suit, starting aces early doubles your outlet.",
       "Same-suit discipline is stricter than Spider’s color-blind builds; one off-suit card blocks a column until scooped away.",
       "Empty columns are precious — use them to swap a blocking card off a deep stack.",
-      "Deal from stock only when tableau moves stall; each deal buries ten new cards.",
+      "Deal from stock only when tableau moves stall; each click adds one card to the waste pile.",
       "If Forty Thieves feels dense, try Baker’s Dozen for a one-deck alternative with more columns."
     ],
     faq: [
@@ -1012,11 +1011,11 @@ export const GAME_CONTENT = {
   "bakers-dozen-solitaire": {
     metaDesc: "Baker's Dozen Solitaire — thirteen columns, kings moved forward at deal. Build down, one card at a time. Free online.",
     intro: [
-      "Baker’s Dozen deals four cards into each of thirteen columns and immediately moves every king to the front of its pile. You build down regardless of suit, but only one card moves at a time — no packed stacks.",
+      "Baker’s Dozen deals four cards into each of thirteen columns and immediately moves every king to the bottom of its pile (under the other cards). You build down regardless of suit, but only one card moves at a time — no packed stacks.",
       "Foundations still build ace through king in suit. Empty columns cannot receive cards on SolitaireFelt, so every move must work within the crowded tableau."
     ],
     rules: [
-      "Thirteen columns, four cards each; kings are repositioned to the front of their column at the deal.",
+      "Thirteen columns, four cards each; kings are moved to the bottom of their column at the deal.",
       "Tableau builds down regardless of suit.",
       "Only one card may move at a time — no multi-card runs.",
       "Empty columns cannot receive cards — unlike Forty Thieves or FreeCell, you cannot park cards in an empty slot.",
@@ -1024,7 +1023,7 @@ export const GAME_CONTENT = {
       "Win with all cards on foundations."
     ],
     tips: [
-      "Kings are already exposed — use them as anchors, not as immovable blockers.",
+      "Kings sit at the bottom of each column — plan moves that uncover cards above them.",
       "With one-card moves, think two steps ahead: where does the card below land after this move?",
       "Do not rush aces to foundations if the deuce you need is still trapped under a king.",
       "Free buried cards by peeling from the top of a column before shuffling kings around.",
@@ -1046,7 +1045,7 @@ export const GAME_CONTENT = {
       "It is the bridge between Klondike players and full Spider — same run-clearing satisfaction in a shorter session."
     ],
     rules: [
-      "Seven columns with a Spider-style deal; bottom cards face up.",
+      "Seven columns with a Spider-style deal; only the top card in each column starts face up.",
       "Build down by rank on the tableau; move groups only if they form a same-suit descending run.",
       "Complete in-suit king-to-ace runs remove from the board.",
       "Stock deals one card per column when no column is empty.",
@@ -1054,7 +1053,7 @@ export const GAME_CONTENT = {
     ],
     tips: [
       "Seven columns fill quickly — protect one empty column until you need it for a run swap.",
-      "Same-suit builds matter even in one-suit Spiderette when multiple suits appear in the deck.",
+      "Build in-suit runs whenever you can — this one-suit deck lets any descending stack move as a unit.",
       "Flip face-down cards before dealing; each stock round adds seven cards you may not want.",
       "If Spiderette feels easy, step to Spider 1 Suit, then 2 Suit, then full Spider.",
       "Compare with Scorpion for a scoop-based alternative on seven columns."
@@ -1105,7 +1104,7 @@ export const GAME_CONTENT = {
     rules: [
       "Type a five-letter word and submit. Use the on-screen keyboard or physical keyboard.",
       "Gold: correct letter, correct spot. Brass: letter exists elsewhere in the answer. Dim: letter not in the word.",
-      "Six guesses maximum. There is no penalty for invalid words beyond losing that attempt if rejected.",
+      "Six guesses maximum. Invalid words are rejected and do not count as a guess.",
       "A new word arrives when your calendar date changes."
     ],
     tips: [
@@ -1162,7 +1161,7 @@ export const GAME_CONTENT = {
       "The word uses common English letters; spaces may appear for multi-word answers.",
       "Click or type a letter. Correct letters fill every matching position.",
       "Wrong letters add to the gallows drawing.",
-      "Win by completing the word. Lose if the drawing completes first."
+      "Win by completing the word. Lose after seven wrong guesses."
     ],
     tips: [
       "Start with E, T, A, O, I, N — they cover most English word mass.",
@@ -1209,16 +1208,16 @@ export const GAME_CONTENT = {
   },
 
   "typing-sprint": {
-    metaDesc: "Typing Sprint — one-minute typing test with WPM and accuracy. Free online keyboard practice.",
+    metaDesc: "Typing Sprint — type a passage with live WPM and accuracy. Free online keyboard practice.",
     intro: [
-      "Typing Sprint gives you a short passage and sixty seconds. Type it as accurately as you can; words per minute and accuracy percentage update as you go.",
+      "Typing Sprint shows a short passage. Type it as accurately as you can; words per minute and accuracy update live as you go.",
       "Useful for warming up fingers or tracking improvement over repeat visits."
     ],
     rules: [
-      "Click the text area and type the shown passage.",
-      "The timer runs for sixty seconds from start.",
+      "Click the text area and type the shown passage from start to finish.",
       "WPM uses five characters per word (standard gross WPM formula).",
-      "Accuracy counts correct characters versus total typed characters."
+      "Accuracy counts correct characters versus total typed characters.",
+      "Finish the full passage to complete the sprint."
     ],
     tips: [
       "Accuracy beats speed at first — errors cost more time than slow correct typing.",
@@ -1324,8 +1323,8 @@ export const GAME_CONTENT = {
   "connect-four": {
     metaDesc: "Connect Four online — drop discs, four in a row wins. Play against the computer. Free browser game.",
     intro: [
-      "Drop red or yellow discs into a seven-column, six-row grid. Gravity fills the lowest empty slot in a column. First to connect four horizontally, vertically, or diagonally wins.",
-      "The CPU plays red; you play yellow (or as configured). Think one row above your win — block before you build."
+      "Drop discs into a seven-column, six-row grid. Gravity fills the lowest empty slot in a column. First to connect four horizontally, vertically, or diagonally wins.",
+      "You play against the computer. Think one row above your win — block before you build."
     ],
     rules: [
       "Click a column to drop your disc in the lowest empty cell.",
@@ -1335,7 +1334,7 @@ export const GAME_CONTENT = {
     ],
     tips: [
       "Control the center columns — they participate in more winning lines.",
-      "Create two threats at once (forks) so the CPU cannot block both.",
+      "Create two threats at once (forks) when you can — the CPU picks randomly among legal columns, not perfect defense.",
       "Block an opponent three-in-a-row immediately — the fourth is often unstoppable above.",
       "Watch diagonal lines through the middle; they are easier to miss than horizontals.",
       "If the top row fills without a winner, the game is a draw — rare but possible."
@@ -1343,7 +1342,7 @@ export const GAME_CONTENT = {
     faq: [
       {
         q: "Does the computer play optimally?",
-        a: "It uses heuristic attack and block logic — strong on obvious fours, not perfect endgame proof."
+        a: "It picks a random legal column — good for casual play, not perfect endgame defense."
       }
     ],
     related: ["tic-tac-toe", "gomoku", "reversi", "checkers", "mancala", "chess"]
@@ -1607,7 +1606,7 @@ export const GAME_CONTENT = {
     metaDesc: "15 Puzzle online — slide tiles into order on a 4×4 grid. Classic sliding block puzzle, free.",
     intro: [
       "The classic fifteen puzzle: a four-by-four grid with fifteen numbered tiles and one hole. Click a tile adjacent to the hole to slide it. Restore reading order from 1 through 15.",
-      "Half of all random shuffles are mathematically unsolvable — New game gives a solvable layout."
+      "Shuffle always produces a solvable layout — each shuffle applies legal moves from the solved state."
     ],
     rules: [
       "Only tiles orthogonally adjacent to the empty cell can move.",
@@ -1619,12 +1618,12 @@ export const GAME_CONTENT = {
       "Keep the empty cell on the bottom-right when possible while building early rows.",
       "Move 1, then 2, then 3 on the top row using a standard corner-cycling pattern.",
       "Do not undo randomly — plan cycles of three tiles around the hole.",
-      "If stuck for minutes, New game — you may have an unsolvable shuffle from an old random deal."
+      "If stuck for minutes, try a different move order — every shuffle here is solvable."
     ],
     faq: [
       {
         q: "Why can’t I solve my board?",
-        a: "Random tile swaps can create impossible layouts. Use New game for a solvable fifteen puzzle."
+        a: "Every shuffle on SolitaireFelt is built from legal moves, so the board can always be solved. Keep trying or hit Shuffle for a fresh start."
       }
     ],
     related: ["quad-merge", "rush-lanes", "peg-solitaire", "jigsaw-table", "nonogram-ink", "sudoku-easy"]
@@ -1675,7 +1674,7 @@ export const GAME_CONTENT = {
       "Prioritize swaps that create two matches at once or set up a falling combo.",
       "Clear gems from the bottom when possible — drops above can chain.",
       "Do not swap randomly — only swaps that make a line of three are valid.",
-      "Four-in-a-row (if created) clears more — hunt L and T shapes when the grid allows.",
+      "Longer lines of three or more clear more gems at once — hunt L and T shapes when the grid allows.",
       "When stuck, scan the whole board once before swapping — the best move is often peripheral."
     ],
     faq: [
@@ -1719,7 +1718,7 @@ export const GAME_CONTENT = {
     metaDesc: "Nonogram (Picross) online — fill cells from row and column clues. Reveal the picture. Free puzzle.",
     intro: [
       "Nonograms (Picross) give you numbers along each row and column describing runs of filled cells. Mark fills and empties; when correct, a pixel picture appears.",
-      "Right-click or toggle X mode to mark cells you know are blank."
+      "Use the Fill and Mark empty toolbar buttons to set cells solid or blank."
     ],
     rules: [
       "Numbers show consecutive groups of filled cells in that row or column, in order.",
@@ -1750,7 +1749,7 @@ export const GAME_CONTENT = {
       "Trucks span two cells; cars span one. Nothing turns — only slides."
     ],
     rules: [
-      "Click a vehicle to select it, then click along its lane to slide if the path is clear.",
+      "Click a vehicle to select it, then use the arrow buttons to slide it forward or back along its lane.",
       "Vehicles move only along their row or column orientation.",
       "The red car must reach the exit opening on the right.",
       "Win when the red car exits. New puzzle reshuffles the lot."
@@ -1780,8 +1779,7 @@ export const GAME_CONTENT = {
     rules: [
       "Click the kiln to earn heat.",
       "Buy upgrades and stokers that add heat per second.",
-      "Prestige resets buildings but grants a multiplier to future earnings.",
-      "Higher tiers unlock as total heat earned grows."
+      "Prestige resets buildings but grants a multiplier to future earnings (available at 5000 heat).",
     ],
     tips: [
       "Buy the cheapest heat-per-second upgrade first until costs outpace gains.",
