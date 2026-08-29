@@ -115,23 +115,36 @@
       scroll.className = "mahjong-scroll";
       const wrap = document.createElement("div");
       wrap.className = "mahjong-board";
-      let maxW = 0, maxH = 0;
+      const padX = 16, padY = 14;
+      let minL = Infinity, minT = Infinity, maxW = 0, maxH = 0;
+      const visible = [];
       tiles.forEach((tile, i) => {
         if (tile.gone) return;
-        const isBlocked = blocked(tiles, tile);
+        const left = tile.x * 30 + tile.z * 5;
+        const top = tile.y * 34 + tile.z * 5;
+        minL = Math.min(minL, left);
+        minT = Math.min(minT, top);
+        maxW = Math.max(maxW, left + 46);
+        maxH = Math.max(maxH, top + 58);
+        visible.push({ tile, i, left, top, isBlocked: blocked(tiles, tile) });
+      });
+      if (!visible.length) {
+        wrap.style.width = "120px";
+        wrap.style.height = "80px";
+      } else {
+        wrap.style.width = (maxW - minL + padX * 2) + "px";
+        wrap.style.height = (maxH - minT + padY * 2) + "px";
+      }
+      visible.forEach(({ tile, i, left, top, isBlocked }) => {
         const n = document.createElement("div");
         n.className = "mj-tile"
           + (isBlocked ? " blocked" : " free")
           + (pick === i ? " picked" : "")
           + (BONUS.has(tile.t) ? " mj-bonus" : "");
         n.dataset.z = String(tile.z);
-        const left = tile.x * 30 + tile.z * 5;
-        const top = tile.y * 34 + tile.z * 5;
-        n.style.left = left + "px";
-        n.style.top = top + "px";
+        n.style.left = (left - minL + padX) + "px";
+        n.style.top = (top - minT + padY) + "px";
         n.style.zIndex = tile.z * 24 + tile.y;
-        maxW = Math.max(maxW, left + 46);
-        maxH = Math.max(maxH, top + 58);
         n.innerHTML = `<span class="mj-face" aria-hidden="true">${FACES[tile.t]}</span>`;
         n.onclick = () => {
           if (isBlocked) return;
@@ -145,8 +158,6 @@
         };
         wrap.appendChild(n);
       });
-      wrap.style.width = (maxW + 32) + "px";
-      wrap.style.height = Math.max(420, maxH + 36) + "px";
       scroll.appendChild(wrap);
       board.appendChild(scroll);
       syncHud();

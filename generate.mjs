@@ -181,7 +181,7 @@ function page({ title, desc, canonical, extraHead, body, rootRel, bodyClass }) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="${rootRel}/css/site.css?v=33" />
-  <link rel="stylesheet" href="${rootRel}/css/games.css?v=30" />
+  <link rel="stylesheet" href="${rootRel}/css/games.css?v=31" />
   ${extraHead || ""}
 </head>
 <body data-root="${rootRel}" class="${esc(bodyClass || "")}">
@@ -405,7 +405,7 @@ for (const g of GAMES) {
         </div>
       </div>
     </main>
-    ${g.engine === "solitaire" || g.engine === "ginrummy" ? `<script src="../../js/deck.js?v=5"></script>\n    ` : ""}<script src="../../engines/${g.engine}.js?v=13"></script>
+    ${g.engine === "solitaire" || g.engine === "ginrummy" ? `<script src="../../js/deck.js?v=5"></script>\n    ` : ""}<script src="../../engines/${g.engine}.js?v=14"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const board = document.getElementById("board");

@@ -76,9 +76,8 @@
 .mahjong-board {
   position: relative;
   height: auto;
-  min-height: 420px;
   width: fit-content;
-  min-width: 320px;
+  min-width: 0;
   margin: 10px auto;
   padding: 14px 16px 18px;
   background:
