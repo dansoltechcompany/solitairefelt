@@ -180,7 +180,7 @@ function page({ title, desc, canonical, extraHead, body, rootRel, bodyClass }) {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="${rootRel}/css/site.css?v=33" />
+  <link rel="stylesheet" href="${rootRel}/css/site.css?v=34" />
   <link rel="stylesheet" href="${rootRel}/css/games.css?v=31" />
   ${extraHead || ""}
 </head>
@@ -382,7 +382,7 @@ for (const g of GAMES) {
     body: `<main class="game-page">
       <section class="play-stage">
         <div class="play-shell">
-          <aside class="ad-rail" aria-hidden="true"></aside>
+          <aside class="play-gutter" aria-hidden="true"></aside>
           <div class="play-table">
             <div class="play-bar">
               <div class="play-identity">
@@ -394,7 +394,7 @@ for (const g of GAMES) {
             </div>
             <div class="board-frame" id="board" data-engine="${esc(g.engine)}" data-config='${JSON.stringify(g.config).replace(/'/g, "&#39;")}'></div>
           </div>
-          <aside class="ad-rail" aria-hidden="true"></aside>
+          <aside class="play-gutter" aria-hidden="true"></aside>
         </div>
       </section>
       <div class="play-copy">

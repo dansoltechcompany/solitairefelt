@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../css/site.css?v=33" />
+  <link rel="stylesheet" href="../../css/site.css?v=34" />
   <link rel="stylesheet" href="../../css/games.css?v=31" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"FreeCell","description":"FreeCell solitaire with four free cells and all cards visible. Plan stacks using empty cells as buffers — play free online.","url":"https://solitairefelt.com/games/freecell/","genre":"solitaire","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are all FreeCell deals solvable?","acceptedAnswer":{"@type":"Answer","text":"Classic FreeCell has a few documented impossible deals, but the vast majority are solvable. If you are stuck, the layout usually needs a different cell assignment, not a new shuffle."}},{"@type":"Question","name":"How is FreeCell different from Klondike?","acceptedAnswer":{"@type":"Answer","text":"Klondike hides cards and uses a stock. FreeCell shows everything and gives you four buffer cells instead — much more planning, much less luck."}}]}</script>
@@ -27,7 +27,7 @@
   <main class="game-page">
       <section class="play-stage">
         <div class="play-shell">
-          <aside class="ad-rail" aria-hidden="true"></aside>
+          <aside class="play-gutter" aria-hidden="true"></aside>
           <div class="play-table">
             <div class="play-bar">
               <div class="play-identity">
@@ -39,7 +39,7 @@
             </div>
             <div class="board-frame" id="board" data-engine="solitaire" data-config='{"variant":"freecell"}'></div>
           </div>
-          <aside class="ad-rail" aria-hidden="true"></aside>
+          <aside class="play-gutter" aria-hidden="true"></aside>
         </div>
       </section>
       <div class="play-copy">
