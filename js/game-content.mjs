@@ -232,12 +232,12 @@ export const GAME_CONTENT = {
       "If a tile has only one copy left on the board, make sure it is free before you remove its partner elsewhere.",
       "Work from the outside of the turtle toward the center; edge tiles free more options than center taps.",
       "Do not grab the first obvious pair — ask which match opens the most new faces.",
-      "Use Hint when you are learning a layout; on later passes try to beat your time without it."
+      "Use Hint to spot a playable pair while learning a layout; on later passes try to beat your time without it."
     ],
     faq: [
       {
         q: "Is every mahjong layout solvable?",
-        a: "Not guaranteed. Some turtle shuffles dead-end. Hint shows a legal pair if one exists; if hint fails, the layout may need a restart."
+        a: "Not every shuffle is guaranteed winnable from the deal. Hint highlights a matching pair among tiles you can play right now. If Hint finds nothing, you have no legal move left — tap New layout. That does not always mean the original deal was impossible; earlier moves may have boxed you in."
       },
       {
         q: "How is this different from mahjong solitaire layouts like Fortress or Dragon?",
@@ -851,7 +851,7 @@ export const GAME_CONTENT = {
     tips: [
       "On a daily turtle, map the top layer in your first minute — the seed will not change if you restart.",
       "Retry the same daily board to beat your time without learning a new shape.",
-      "Hint shows a legal pair if one exists — use it to verify a daily dead-end versus a missed match.",
+      "Hint highlights a playable matching pair if one exists. No hint usually means no legal move — not necessarily that today's daily was unwinnable from the start.",
       "Want a different shape? Fortress and Dragon are random each new game.",
       "Pair with Daily Klondike or Daily Sudoku for a full daily classics routine."
     ],

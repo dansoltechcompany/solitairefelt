@@ -48,7 +48,7 @@
 <p>Matching rules match Mahjong Solitaire; only the shuffle is shared and daily.</p><h2>How to play Daily Mahjong</h2>
 <ul><li>Standard mahjong solitaire on the turtle layout.</li><li>Tile positions and identities are date-seeded.</li><li>New game reloads today’s board until the date changes.</li></ul>
 <h2>Strategy tips</h2>
-<ul><li>On a daily turtle, map the top layer in your first minute — the seed will not change if you restart.</li><li>Retry the same daily board to beat your time without learning a new shape.</li><li>Hint shows a legal pair if one exists — use it to verify a daily dead-end versus a missed match.</li><li>Want a different shape? Fortress and Dragon are random each new game.</li><li>Pair with Daily Klondike or Daily Sudoku for a full daily classics routine.</li></ul>
+<ul><li>On a daily turtle, map the top layer in your first minute — the seed will not change if you restart.</li><li>Retry the same daily board to beat your time without learning a new shape.</li><li>Hint highlights a playable matching pair if one exists. No hint usually means no legal move — not necessarily that today's daily was unwinnable from the start.</li><li>Want a different shape? Fortress and Dragon are random each new game.</li><li>Pair with Daily Klondike or Daily Sudoku for a full daily classics routine.</li></ul>
 <h2>Common questions</h2>
 <h3>Which layout does Daily Mahjong use?</h3>
 <p>The turtle layout — the same shape as Mahjong Solitaire, with a date-fixed tile deal.</p>
@@ -100,7 +100,7 @@
         </div>
       </div>
     </main>
-    <script src="../../engines/mahjong.js?v=12"></script>
+    <script src="../../engines/mahjong.js?v=13"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const board = document.getElementById("board");

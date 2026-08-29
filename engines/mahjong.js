@@ -82,8 +82,27 @@
     return left && right;
   }
 
+  function findFreePair(ts) {
+    const free = ts.map((t, i) => ({ t, i })).filter((x) => !x.t.gone && !blocked(ts, x.t));
+    for (let i = 0; i < free.length; i++)
+      for (let j = i + 1; j < free.length; j++)
+        if (free[i].t.t === free[j].t.t) return free[i].i;
+    return null;
+  }
+
   window.BA.games.mahjong = function (board, cfg, toolbar, hud) {
     let tiles, pick, t0;
+    function syncHud() {
+      const remaining = tiles.filter((t) => !t.gone).length;
+      const sec = Math.floor((Date.now() - t0) / 1000);
+      if (remaining === 0) {
+        hud.textContent = "Cleared — well played.";
+      } else if (findFreePair(tiles) == null) {
+        hud.textContent = `No moves — tap New layout · ${remaining} tiles · ${sec}s`;
+      } else {
+        hud.textContent = `${remaining} tiles · ${sec}s`;
+      }
+    }
     function deal() {
       tiles = makeLayout(cfg.layout || "turtle", cfg.daily ? window.BA.mulberry(window.BA.todaySeed()) : Math.random);
       pick = null;
@@ -121,7 +140,6 @@
           if (tiles[pick].t === tile.t) {
             tiles[pick].gone = tile.gone = true;
             pick = null;
-            if (tiles.every((t) => t.gone)) hud.textContent = "Cleared";
           } else pick = i;
           draw();
         };
@@ -131,8 +149,7 @@
       wrap.style.height = Math.max(420, maxH + 36) + "px";
       scroll.appendChild(wrap);
       board.appendChild(scroll);
-      const left = tiles.filter((t) => !t.gone).length;
-      hud.textContent = `${left} tiles · ${Math.floor((Date.now() - t0) / 1000)}s`;
+      syncHud();
     }
     toolbar.innerHTML = "";
     const b = document.createElement("button");
@@ -144,11 +161,9 @@
     s.className = "btn hint";
     s.textContent = "Hint";
     s.onclick = () => {
-      const free = tiles.map((t, i) => ({ t, i })).filter((x) => !x.t.gone && !blocked(tiles, x.t));
-      for (let i = 0; i < free.length; i++)
-        for (let j = i + 1; j < free.length; j++)
-          if (free[i].t.t === free[j].t.t) { pick = free[i].i; draw(); return; }
-      hud.textContent = "Shuffle with New layout — no free pair.";
+      const hint = findFreePair(tiles);
+      if (hint != null) { pick = hint; draw(); return; }
+      syncHud();
     };
     toolbar.appendChild(s);
     deal();

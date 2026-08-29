@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../css/site.css?v=33" />
   <link rel="stylesheet" href="../../css/games.css?v=30" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Mahjong Solitaire","description":"Mahjong Solitaire turtle layout — match identical free tiles and clear the board. Classic pairs puzzle, free in your browser.","url":"https://solitairefelt.com/games/mahjong-solitaire/","genre":"mahjong","playMode":"SinglePlayer","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is every mahjong layout solvable?","acceptedAnswer":{"@type":"Answer","text":"Not guaranteed. Some turtle shuffles dead-end. Hint shows a legal pair if one exists; if hint fails, the layout may need a restart."}},{"@type":"Question","name":"How is this different from mahjong solitaire layouts like Fortress or Dragon?","acceptedAnswer":{"@type":"Answer","text":"Matching rules are the same; only the tile arrangement changes. Try Fortress or Dragon on SolitaireFelt when you want a different shape with the same pair rules."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is every mahjong layout solvable?","acceptedAnswer":{"@type":"Answer","text":"Not every shuffle is guaranteed winnable from the deal. Hint highlights a matching pair among tiles you can play right now. If Hint finds nothing, you have no legal move left — tap New layout. That does not always mean the original deal was impossible; earlier moves may have boxed you in."}},{"@type":"Question","name":"How is this different from mahjong solitaire layouts like Fortress or Dragon?","acceptedAnswer":{"@type":"Answer","text":"Matching rules are the same; only the tile arrangement changes. Try Fortress or Dragon on SolitaireFelt when you want a different shape with the same pair rules."}}]}</script>
 </head>
 <body data-root="../.." class="play-page">
   <script src="../../js/chrome.js?v=3"></script>
@@ -48,10 +48,10 @@
 <p>A tile is free when nothing sits on top of it and at least one long side (left or right) is open. Plan two or three matches ahead or you can lock yourself out of a pair.</p><h2>How to play Mahjong Solitaire</h2>
 <ul><li>Find two identical tiles that are both free and click them to remove the pair.</li><li>Free means: no tile covering from above, and at least one horizontal edge open.</li><li>Match identical tile faces only — both tiles must show the same symbol.</li><li>You win when all tiles are cleared. You lose when no free pairs remain.</li></ul>
 <h2>Strategy tips</h2>
-<ul><li>Scan the top layer first — matches there unlock the most tiles below.</li><li>If a tile has only one copy left on the board, make sure it is free before you remove its partner elsewhere.</li><li>Work from the outside of the turtle toward the center; edge tiles free more options than center taps.</li><li>Do not grab the first obvious pair — ask which match opens the most new faces.</li><li>Use Hint when you are learning a layout; on later passes try to beat your time without it.</li></ul>
+<ul><li>Scan the top layer first — matches there unlock the most tiles below.</li><li>If a tile has only one copy left on the board, make sure it is free before you remove its partner elsewhere.</li><li>Work from the outside of the turtle toward the center; edge tiles free more options than center taps.</li><li>Do not grab the first obvious pair — ask which match opens the most new faces.</li><li>Use Hint to spot a playable pair while learning a layout; on later passes try to beat your time without it.</li></ul>
 <h2>Common questions</h2>
 <h3>Is every mahjong layout solvable?</h3>
-<p>Not guaranteed. Some turtle shuffles dead-end. Hint shows a legal pair if one exists; if hint fails, the layout may need a restart.</p>
+<p>Not every shuffle is guaranteed winnable from the deal. Hint highlights a matching pair among tiles you can play right now. If Hint finds nothing, you have no legal move left — tap New layout. That does not always mean the original deal was impossible; earlier moves may have boxed you in.</p>
 <h3>How is this different from mahjong solitaire layouts like Fortress or Dragon?</h3>
 <p>Matching rules are the same; only the tile arrangement changes. Try Fortress or Dragon on SolitaireFelt when you want a different shape with the same pair rules.</p>
 </article>
@@ -102,7 +102,7 @@
         </div>
       </div>
     </main>
-    <script src="../../engines/mahjong.js?v=12"></script>
+    <script src="../../engines/mahjong.js?v=13"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const board = document.getElementById("board");

@@ -405,7 +405,7 @@ for (const g of GAMES) {
         </div>
       </div>
     </main>
-    ${g.engine === "solitaire" || g.engine === "ginrummy" ? `<script src="../../js/deck.js?v=5"></script>\n    ` : ""}<script src="../../engines/${g.engine}.js?v=12"></script>
+    ${g.engine === "solitaire" || g.engine === "ginrummy" ? `<script src="../../js/deck.js?v=5"></script>\n    ` : ""}<script src="../../engines/${g.engine}.js?v=13"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const board = document.getElementById("board");
