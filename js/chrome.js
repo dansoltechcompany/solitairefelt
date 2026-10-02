@@ -14,19 +14,19 @@ window.BA.header = function () {
   return `
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="${r}/index.html"><img class="brand-logo" src="${r}/img/logo-mark.svg?v=7" alt="" width="32" height="32" /><span class="brand-name">Solitaire<span class="brand-accent">Felt</span></span></a>
+      <a class="brand" href="${r}/"><img class="brand-logo" src="${r}/img/logo-mark.svg?v=7" alt="" width="32" height="32" /><span class="brand-name">Solitaire<span class="brand-accent">Felt</span></span></a>
       <button class="nav-toggle" type="button" aria-label="Open menu">Menu</button>
       <nav class="primary">
-        <a href="${r}/games/klondike-solitaire/index.html" data-nav="klondike">Solitaire</a>
-        <a href="${r}/games/spider-solitaire/index.html" data-nav="spider">Spider</a>
-        <a href="${r}/games/freecell/index.html" data-nav="freecell">FreeCell</a>
-        <a href="${r}/games/pyramid-solitaire/index.html" data-nav="pyramid">Pyramid</a>
-        <a href="${r}/games/tripeaks-solitaire/index.html" data-nav="tripeaks">TriPeaks</a>
-        <a href="${r}/games/mahjong-solitaire/index.html" data-nav="mahjong">Mahjong</a>
-        <a href="${r}/games/sudoku-easy/index.html" data-nav="sudoku">Sudoku</a>
-        <a href="${r}/index.html" data-nav="all">All games</a>
+        <a href="${r}/games/klondike-solitaire/" data-nav="klondike">Solitaire</a>
+        <a href="${r}/games/spider-solitaire/" data-nav="spider">Spider</a>
+        <a href="${r}/games/freecell/" data-nav="freecell">FreeCell</a>
+        <a href="${r}/games/pyramid-solitaire/" data-nav="pyramid">Pyramid</a>
+        <a href="${r}/games/tripeaks-solitaire/" data-nav="tripeaks">TriPeaks</a>
+        <a href="${r}/games/mahjong-solitaire/" data-nav="mahjong">Mahjong</a>
+        <a href="${r}/games/sudoku-easy/" data-nav="sudoku">Sudoku</a>
+        <a href="${r}/" data-nav="all">All games</a>
       </nav>
-      <form class="search" action="${r}/index.html" method="get">
+      <form class="search" action="${r}/" method="get">
         <input name="q" type="search" placeholder="Search games" aria-label="Search games" autocomplete="off" />
       </form>
     </div>
@@ -45,24 +45,24 @@ window.BA.footer = function () {
       </div>
       <div>
         <strong>Play</strong><br>
-        <a href="${r}/games/klondike-solitaire/index.html">Klondike</a><br>
-        <a href="${r}/games/spider-solitaire/index.html">Spider</a><br>
-        <a href="${r}/games/mahjong-solitaire/index.html">Mahjong</a><br>
-        <a href="${r}/games/sudoku-easy/index.html">Sudoku</a>
+        <a href="${r}/games/klondike-solitaire/">Klondike</a><br>
+        <a href="${r}/games/spider-solitaire/">Spider</a><br>
+        <a href="${r}/games/mahjong-solitaire/">Mahjong</a><br>
+        <a href="${r}/games/sudoku-easy/">Sudoku</a>
       </div>
       <div>
         <strong>Collections</strong><br>
-        <a href="${r}/categories/solitaire.html">Solitaire</a><br>
-        <a href="${r}/categories/words.html">Word games</a><br>
-        <a href="${r}/categories/board.html">Board games</a><br>
-        <a href="${r}/categories/puzzles.html">Puzzles</a>
+        <a href="${r}/categories/solitaire">Solitaire</a><br>
+        <a href="${r}/categories/words">Word games</a><br>
+        <a href="${r}/categories/board">Board games</a><br>
+        <a href="${r}/categories/puzzles">Puzzles</a>
       </div>
       <div>
         <strong>Site</strong><br>
-        <a href="${r}/about.html">About</a><br>
-        <a href="${r}/contact.html">Contact</a><br>
-        <a href="${r}/privacy.html">Privacy</a><br>
-        <a href="${r}/terms.html">Terms</a>
+        <a href="${r}/about">About</a><br>
+        <a href="${r}/contact">Contact</a><br>
+        <a href="${r}/privacy">Privacy</a><br>
+        <a href="${r}/terms">Terms</a>
       </div>
     </div>
   </footer>`;

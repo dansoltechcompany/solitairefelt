@@ -185,7 +185,7 @@ function page({ title, desc, canonical, extraHead, body, rootRel, bodyClass }) {
   ${extraHead || ""}
 </head>
 <body data-root="${rootRel}" class="${esc(bodyClass || "")}">
-  <script src="${rootRel}/js/chrome.js?v=3"></script>
+  <script src="${rootRel}/js/chrome.js?v=4"></script>
   <script src="${rootRel}/js/catalog.js"></script>
   <div id="site-header"></div>
   ${body}
@@ -230,7 +230,7 @@ function write(file, text) {
 function card(g, prefix, opts = {}) {
   const badge = opts.badge ? `<span class="card-badge">${esc(opts.badge)}</span>` : "";
   const hot = opts.featured ? " card--hot" : "";
-  return `<a class="card${hot}" href="${prefix}games/${g.id}/index.html" data-category="${esc(g.category)}" data-title="${esc(g.title)}">
+  return `<a class="card${hot}" href="${prefix}games/${g.id}/" data-category="${esc(g.category)}" data-title="${esc(g.title)}">
     <div class="card-cover">
       <img src="${prefix}thumbs/${g.id}.svg?v=8" alt="${esc(g.title)}" width="360" height="450" />
       ${badge}
@@ -259,16 +259,16 @@ const homeBody = `
       <h1>Sit down. Deal a hand.</h1>
       <p class="lede">Free solitaire, mahjong, sudoku, daily words, and board games on the green felt. No download, no account — pick a table and play.</p>
       <div class="hero-actions">
-        <a class="btn primary" href="games/klondike-solitaire/index.html">Play Solitaire</a>
-        <a class="btn ghost" href="games/spider-solitaire/index.html">Spider</a>
+        <a class="btn primary" href="games/klondike-solitaire/">Play Solitaire</a>
+        <a class="btn ghost" href="games/spider-solitaire/">Spider</a>
       </div>
       <div class="quick-links">
-        <a href="games/freecell/index.html">FreeCell</a>
-        <a href="games/pyramid-solitaire/index.html">Pyramid</a>
-        <a href="games/tripeaks-solitaire/index.html">TriPeaks</a>
-        <a href="games/mahjong-solitaire/index.html">Mahjong</a>
-        <a href="games/sudoku-easy/index.html">Sudoku</a>
-        <a href="games/penta-daily/index.html">Daily word</a>
+        <a href="games/freecell/">FreeCell</a>
+        <a href="games/pyramid-solitaire/">Pyramid</a>
+        <a href="games/tripeaks-solitaire/">TriPeaks</a>
+        <a href="games/mahjong-solitaire/">Mahjong</a>
+        <a href="games/sudoku-easy/">Sudoku</a>
+        <a href="games/penta-daily/">Daily word</a>
       </div>
       <div class="hero-stats">
         <div class="stat"><b>${GAMES.length}</b><span>playable games</span></div>
@@ -284,7 +284,7 @@ const homeBody = `
         <div class="eyebrow">On the table</div>
         <h2>Featured</h2>
       </div>
-      <a class="section-link" href="games/klondike-solitaire/index.html">Play now</a>
+      <a class="section-link" href="games/klondike-solitaire/">Play now</a>
     </div>
     <div class="featured">
       ${card(GAMES.find((g) => g.id === "klondike-solitaire"), "", { badge: "Classic", featured: true })}
@@ -344,7 +344,7 @@ write(out("index.html"), page({
     "@type": "WebSite",
     name: SITE.name,
     url: origin + "/",
-    potentialAction: { "@type": "SearchAction", target: origin + "/index.html?q={query}", "query-input": "required name=query" }
+    potentialAction: { "@type": "SearchAction", target: origin + "/?q={query}", "query-input": "required name=query" }
   })}</script>`,
   body: homeBody,
   rootRel: ".",
@@ -356,9 +356,9 @@ for (const cat of CATEGORIES) {
   write(out("categories", cat.id + ".html"), page({
     title: `${cat.title} — Play Free Online | ${SITE.name}`,
     desc: cat.blurb,
-    canonical: `${origin}/categories/${cat.id}.html`,
+    canonical: `${origin}/categories/${cat.id}`,
     body: `<main class="wrap catalog-hero">
-      <nav class="crumbs"><a href="../index.html">Home</a> · ${esc(cat.title)}</nav>
+      <nav class="crumbs"><a href="../">Home</a> · ${esc(cat.title)}</nav>
       <div class="eyebrow">Collection</div>
       <h1>${esc(cat.title)}</h1>
       <p class="lede">${esc(cat.blurb)}</p>
@@ -386,7 +386,7 @@ for (const g of GAMES) {
           <div class="play-table">
             <div class="play-bar">
               <div class="play-identity">
-                <nav class="crumbs"><a href="../../index.html">Home</a> · <a href="../../categories/${g.category}.html">${esc(catTitle)}</a></nav>
+                <nav class="crumbs"><a href="../../">Home</a> · <a href="../../categories/${g.category}">${esc(catTitle)}</a></nav>
                 <h1>${esc(g.title)}</h1>
               </div>
               <div id="hud" class="hud"></div>
@@ -427,7 +427,7 @@ for (const g of GAMES) {
 const legal = (title, slug, inner) => page({
   title: `${title} | ${SITE.name}`,
   desc: `${title} for ${SITE.name}.`,
-  canonical: `${origin}/${slug}.html`,
+  canonical: `${origin}/${slug}`,
   body: `<main class="wrap prose" style="padding:32px 0 56px;max-width:760px">${inner}</main>`,
   rootRel: ".",
   bodyClass: "legal-page"
@@ -476,10 +476,10 @@ Allow: /
 Sitemap: ${origin}/sitemap.xml
 `);
 
-const urls = ["/", "/about.html", "/contact.html", "/privacy.html", "/terms.html", "/cookies.html", ...CATEGORIES.map((c) => `/categories/${c.id}.html`), ...GAMES.map((g) => `/games/${g.id}/`)];
+const urls = ["/", "/about", "/contact", "/privacy", "/terms", "/cookies", ...CATEGORIES.map((c) => `/categories/${c.id}`), ...GAMES.map((g) => `/games/${g.id}/`)];
 write(out("sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `  <url><loc>${origin}${u}</loc></url>`).join("\n")}
+${urls.map((u) => `  <url><loc>${origin}${u}</loc><lastmod>2026-10-02</lastmod></url>`).join("\n")}
 </urlset>
 `);
 
